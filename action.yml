@@ -1,0 +1,36 @@
+name: warnahead
+description: Opens an issue before store and CI deadlines block your mobile app release
+author: Aman Gupta
+branding:
+  icon: clock
+  color: orange
+inputs:
+  path:
+    description: Directory to scan, relative to the workspace
+    default: '.'
+  horizon-days:
+    description: Report deadlines due within this many days
+    default: '90'
+  thresholds:
+    description: Days before a deadline at which its issue gets a comment, separated by commas
+    default: '60,30,7'
+  mode:
+    description: 'issues, single-issue or report-only'
+    default: 'issues'
+  include-expected:
+    description: Also act on expected deadlines that are not announced yet
+    default: 'false'
+  fail-within:
+    description: Fail the job when a deadline that blocks releases or breaks CI is this many days away or closer; empty never fails
+    default: ''
+  token:
+    description: Token for the GitHub issues API and the dataset copy on GitHub
+    default: ${{ github.token }}
+outputs:
+  due-count:
+    description: Number of deadlines due within horizon-days or passed
+  findings-json:
+    description: Path to the findings JSON file (warnahead.findings/1)
+runs:
+  using: node24
+  main: dist/action.mjs
