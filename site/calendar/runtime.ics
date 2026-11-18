@@ -6,13 +6,13 @@ METHOD:PUBLISH
 X-WR-CALNAME:warnahead: Runtimes
 BEGIN:VEVENT
 UID:runtime/nodejs-18-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20250430
 DTEND;VALUE=DATE:20250501
 SUMMARY:Node.js 18 reached end of life
 DESCRIPTION:What happens: End-of-life since 2025-04-30 in the Node.js relea
  se schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .nod
- e-version\, setup-node or eas.json) is 18.x\nLast verified 2026-11-11
+ e-version\, setup-node or eas.json) is 18.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-18-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -29,13 +29,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/nodejs-23-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20250601
 DTEND;VALUE=DATE:20250602
 SUMMARY:Node.js 23 reached end of life
 DESCRIPTION:What happens: End-of-life since 2025-06-01 in the Node.js relea
  se schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .nod
- e-version\, setup-node or eas.json) is 23.x\nLast verified 2026-11-11
+ e-version\, setup-node or eas.json) is 23.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-23-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -52,13 +52,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.77-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20250612
 DTEND;VALUE=DATE:20250613
 SUMMARY:React Native 0.77 is unsupported
 DESCRIPTION:What happens: Unsupported since 2025-06-12: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.77.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.77-support
  /
 STATUS:CONFIRMED
@@ -76,13 +76,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.78-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20250812
 DTEND;VALUE=DATE:20250813
 SUMMARY:React Native 0.78 is unsupported
 DESCRIPTION:What happens: Unsupported since 2025-08-12: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.78.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.78-support
  /
 STATUS:CONFIRMED
@@ -100,13 +100,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.79-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20251008
 DTEND;VALUE=DATE:20251009
 SUMMARY:React Native 0.79 is unsupported
 DESCRIPTION:What happens: Unsupported since 2025-10-08: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.79.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.79-support
  /
 STATUS:CONFIRMED
@@ -124,13 +124,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.80-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20251210
 DTEND;VALUE=DATE:20251211
 SUMMARY:React Native 0.80 is unsupported
 DESCRIPTION:What happens: Unsupported since 2025-12-10: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.80.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.80-support
  /
 STATUS:CONFIRMED
@@ -148,13 +148,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.81-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260211
 DTEND;VALUE=DATE:20260212
 SUMMARY:React Native 0.81 is unsupported
 DESCRIPTION:What happens: Unsupported since 2026-02-11: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.81.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.81-support
  /
 STATUS:CONFIRMED
@@ -172,13 +172,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.82-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260407
 DTEND;VALUE=DATE:20260408
 SUMMARY:React Native 0.82 is unsupported
 DESCRIPTION:What happens: Unsupported since 2026-04-07: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.82.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.82-support
  /
 STATUS:CONFIRMED
@@ -196,13 +196,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/nodejs-20-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260430
 DTEND;VALUE=DATE:20260501
 SUMMARY:Node.js 20 reached end of life
 DESCRIPTION:What happens: End-of-life since 2026-04-30 in the Node.js relea
  se schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .nod
- e-version\, setup-node or eas.json) is 20.x\nLast verified 2026-11-11
+ e-version\, setup-node or eas.json) is 20.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-20-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -219,13 +219,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/nodejs-25-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260601
 DTEND;VALUE=DATE:20260602
 SUMMARY:Node.js 25 reached end of life
 DESCRIPTION:What happens: End-of-life since 2026-06-01 in the Node.js relea
  se schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .nod
- e-version\, setup-node or eas.json) is 25.x\nLast verified 2026-11-11
+ e-version\, setup-node or eas.json) is 25.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-25-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -242,13 +242,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.83-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260609
 DTEND;VALUE=DATE:20260610
 SUMMARY:React Native 0.83 is unsupported
 DESCRIPTION:What happens: Unsupported since 2026-06-09: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.83.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.83-support
  /
 STATUS:CONFIRMED
@@ -266,13 +266,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.84-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260811
 DTEND;VALUE=DATE:20260812
 SUMMARY:React Native 0.84 is unsupported
 DESCRIPTION:What happens: Unsupported since 2026-08-11: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.84.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.84-support
  /
 STATUS:CONFIRMED
@@ -290,13 +290,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/react-native-0.85-support
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20261012
 DTEND;VALUE=DATE:20261013
 SUMMARY:React Native 0.85 is unsupported
 DESCRIPTION:What happens: Unsupported since 2026-10-12: no new releases are
   to be expected.\nWho: Projects that resolve react-native 0.85.x\nLast ver
- ified 2026-11-11
+ ified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/react-native-0.85-support
  /
 STATUS:CONFIRMED
@@ -314,13 +314,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/nodejs-22-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:Node.js 22 reaches end of life
 DESCRIPTION:What happens: End-of-life on 2027-04-30 in the Node.js release 
  schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .node-v
- ersion\, setup-node or eas.json) is 22.x\nLast verified 2026-11-11
+ ersion\, setup-node or eas.json) is 22.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-22-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -337,13 +337,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/nodejs-24-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20280430
 DTEND;VALUE=DATE:20280501
 SUMMARY:Node.js 24 reaches end of life
 DESCRIPTION:What happens: End-of-life on 2028-04-30 in the Node.js release 
  schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .node-v
- ersion\, setup-node or eas.json) is 24.x\nLast verified 2026-11-11
+ ersion\, setup-node or eas.json) is 24.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-24-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -360,13 +360,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:runtime/nodejs-26-eol
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20290430
 DTEND;VALUE=DATE:20290501
 SUMMARY:Node.js 26 reaches end of life
 DESCRIPTION:What happens: End-of-life on 2029-04-30 in the Node.js release 
  schedule.\nWho: Projects whose Node.js version (engines\, .nvmrc\, .node-v
- ersion\, setup-node or eas.json) is 26.x\nLast verified 2026-11-11
+ ersion\, setup-node or eas.json) is 26.x\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-26-eol/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT

@@ -54,14 +54,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "iOS and iPadOS apps uploaded to App Store Connect must target iOS 13 or later.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/news/upcoming-requirements/"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "September 9, 2026",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/news/upcoming-requirements/"
         }
       ],
@@ -76,8 +76,8 @@
       "title": "iOS and iPadOS uploads must target iOS 13 or later",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -134,14 +134,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "iOS and iPadOS apps must be built with the iOS & iPadOS 27 SDK or later and target iOS 15 or later",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/app-store/submitting/"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "Starting April 2027",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/app-store/submitting/"
         }
       ],
@@ -156,8 +156,8 @@
       "title": "iOS and iPadOS uploads must target iOS 15 or later from April 2027",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -214,14 +214,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "Apps uploaded to App Store Connect must be built with Xcode 26 or later using an SDK for iOS 26, iPadOS 26, tvOS 26, visionOS 26, or watchOS 26.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/news/upcoming-requirements/"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "Since April 28, 2026",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/news/upcoming-requirements/"
         }
       ],
@@ -236,8 +236,8 @@
       "title": "Uploads must be built with Xcode 26 and the 26 SDKs",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -294,14 +294,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "Starting April 2027, apps and games uploaded to App Store Connect need to meet the following minimum requirements",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/news/?id=k1mtkt1k"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "iOS and iPadOS apps must be built with the iOS 27 & iPadOS 27 SDK or later",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.apple.com/news/?id=k1mtkt1k"
         }
       ],
@@ -316,8 +316,8 @@
       "title": "Uploads must be built with the 27 SDKs from April 2027",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -360,14 +360,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "GitHub Actions will fully retire all macOS 14 images on November 2, 2026.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/actions/runner-images/issues/13518"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "The macOS 14 runner image will be retired on November 2, 2026.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement"
         }
       ],
@@ -382,8 +382,8 @@
       "title": "macOS 14 runner images are retired",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -422,14 +422,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "This is the final notification that Node 20 is no longer available on GitHub Actions runners. Runners now use Node 24 for JavaScript actions.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "Keep accepting legacy action manifests, but execute all JavaScript actions using node24.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/actions/runner/blob/main/src/Runner.Worker/Handlers/HandlerFactory.cs"
         }
       ],
@@ -443,8 +443,8 @@
       "title": "Actions declaring node20 now run on Node 24",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -486,14 +486,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "Deprecation: September 17th, 2026 Retirement: April 17th, 2027",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/actions/runner-images/issues/14254"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "Workflows using the ubuntu-22.04, ubuntu-22.04-arm image labels will be terminated with an error.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/actions/runner-images/issues/14254"
         }
       ],
@@ -507,8 +507,8 @@
       "title": "Ubuntu 22.04 runner images are retired on April 17, 2027",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -549,14 +549,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "This change will be rolled out over a period of several weeks beginning October 19, 2026. We plan to complete the migration by November 19, 2026.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/actions/runner-images/issues/14748"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "The ubuntu-latest label is ready to become the default version for Ubuntu 26.04.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/actions/runner-images/issues/14748"
         }
       ],
@@ -570,8 +570,8 @@
       "title": "ubuntu-latest moves to Ubuntu 26.04",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -619,21 +619,21 @@
           "archive": null,
           "kind": "primary",
           "quote": "By Aug 31, 2026, all new apps and updates to existing apps must use Billing Library version 8 or later.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.android.com/google/play/billing/deprecation-faq"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "7 August 31, 2026 November 1, 2026",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.android.com/google/play/billing/deprecation-faq"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "existing apps still work, but new apps and updates must use supported versions.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.android.com/google/play/billing/deprecation-faq"
         }
       ],
@@ -649,8 +649,8 @@
       "title": "New apps and updates must use Play Billing Library 8 or later",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -698,14 +698,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "8 August 31, 2027 November 1, 2027",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.android.com/google/play/billing/deprecation-faq"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "existing apps still work, but new apps and updates must use supported versions.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://developer.android.com/google/play/billing/deprecation-faq"
         }
       ],
@@ -721,8 +721,8 @@
       "title": "New apps and updates must use Play Billing Library 9 or later",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -778,14 +778,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "Existing apps must target Android 15 (API level 35) or higher to remain available to new users on devices running Android OS higher than your app's target API level.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "existing apps (across mobile and Android Auto) must target Android 15 (API level 35) or higher by August 31, 2026",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
         }
       ],
@@ -800,8 +800,8 @@
       "title": "Existing apps must target API 35 to stay available to new users",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -857,14 +857,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
         },
         {
           "archive": null,
           "kind": "primary",
           "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
         }
       ],
@@ -879,8 +879,8 @@
       "title": "New apps and updates must target API 36",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -937,7 +937,7 @@
           "archive": null,
           "kind": "primary",
           "quote": "Android 16 (API level 36)* August 31, 2026 August 31, 2026 Android 15(API level 35) August 31, 2025 August 31, 2025",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
         }
       ],
@@ -952,8 +952,8 @@
       "title": "New apps and updates expected to need API 37",
       "verification": {
         "by": "guptaaman678",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -980,7 +980,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-18-eol",
@@ -992,14 +992,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "18.x | End-of-Life | Hydrogen | 2022-04-19 | 2022-10-25 | 2023-10-18 | 2025-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "18 (LTS) 2022-04-19 true 2022-10-25 true 2023-10-18 true 2025-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1013,8 +1013,8 @@
       "title": "Node.js 18 reached end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1041,7 +1041,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-20-eol",
@@ -1053,14 +1053,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "20.x | End-of-Life | Iron | 2023-04-18 | 2023-10-24 | 2024-10-22 | 2026-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "20 (LTS) 2023-04-18 true 2023-10-24 true 2024-10-22 true 2026-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1074,8 +1074,8 @@
       "title": "Node.js 20 reached end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1102,7 +1102,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-22-eol",
@@ -1114,14 +1114,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "22.x | Maintenance LTS | Jod | 2024-04-24 | 2024-10-29 | 2025-10-21 | 2027-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "22 (LTS) 2024-04-24 true 2024-10-29 true 2025-10-21 false 2027-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1135,8 +1135,8 @@
       "title": "Node.js 22 reaches end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -1163,7 +1163,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-23-eol",
@@ -1175,14 +1175,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "23.x | End-of-Life | 2024-10-15 | - | 2025-04-01 | 2025-06-01",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "23 2024-10-16 false true 2025-04-01 true 2025-06-01",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1196,8 +1196,8 @@
       "title": "Node.js 23 reached end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1224,7 +1224,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-24-eol",
@@ -1236,14 +1236,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "24.x | Maintenance LTS | Krypton | 2025-05-06 | 2025-10-28 | 2026-10-20 | 2028-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "24 (LTS) 2025-05-06 true 2025-10-28 true 2026-10-20 false 2028-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1257,8 +1257,8 @@
       "title": "Node.js 24 reaches end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -1285,7 +1285,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-25-eol",
@@ -1297,14 +1297,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "25.x | End-of-Life | 2025-10-15 | - | 2026-04-01 | 2026-06-01",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "25 2025-10-15 false true 2026-04-01 true 2026-06-01",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1318,8 +1318,8 @@
       "title": "Node.js 25 reached end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1346,7 +1346,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/nodejs-26-eol",
@@ -1358,14 +1358,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "26.x | Active LTS | Lithium | 2026-05-05 | 2026-10-28 | 2027-10-20 | 2029-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://github.com/nodejs/Release/blob/main/README.md"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "26 (LTS) 2026-05-05 true 2026-10-28 false 2027-10-27 false 2029-04-30",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/nodejs"
         }
       ],
@@ -1379,8 +1379,8 @@
       "title": "Node.js 26 reaches end of life",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-12-11"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-12-18"
       }
     },
     {
@@ -1411,7 +1411,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.77-support",
@@ -1423,14 +1423,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.77.x | 2024-11-26 | 2025-01-21 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.77 2025-01-21 false true 2025-04-08 true 2025-06-12",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1444,8 +1444,8 @@
       "title": "React Native 0.77 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1476,7 +1476,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.78-support",
@@ -1488,14 +1488,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.78.x | 2025-01-15 | 2025-02-19 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.78 2025-02-19 false true 2025-06-12 true 2025-08-12",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1509,8 +1509,8 @@
       "title": "React Native 0.78 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1541,7 +1541,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.79-support",
@@ -1553,14 +1553,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.79.x | 2025-03-04 | 2025-04-08 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.79 2025-04-08 false true 2025-08-12 true 2025-10-08",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1574,8 +1574,8 @@
       "title": "React Native 0.79 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1606,7 +1606,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.80-support",
@@ -1618,14 +1618,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.80.x | 2025-05-07 | 2025-06-12 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.80 2025-06-12 false true 2025-10-08 true 2025-12-10",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1639,8 +1639,8 @@
       "title": "React Native 0.80 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1671,7 +1671,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.81-support",
@@ -1683,14 +1683,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.81.x | 2025-07-10 | 2025-08-12 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.81 2025-08-12 false true 2025-12-10 true 2026-02-11",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1704,8 +1704,8 @@
       "title": "React Native 0.81 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1736,7 +1736,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.82-support",
@@ -1748,14 +1748,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.82.x | 2025-09-01 | 2025-10-06 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.82 2025-10-08 false true 2026-02-11 true 2026-04-07",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1769,8 +1769,8 @@
       "title": "React Native 0.82 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1801,7 +1801,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.83-support",
@@ -1813,14 +1813,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.83.x | 2025-11-03 | 2025-12-10 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.83 2025-12-10 false true 2026-04-07 true 2026-06-09",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1834,8 +1834,8 @@
       "title": "React Native 0.83 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1866,7 +1866,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.84-support",
@@ -1878,14 +1878,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.84.x | 2026-01-05 | 2026-02-09 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.84 2026-02-11 false true 2026-06-09 true 2026-08-11",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1899,8 +1899,8 @@
       "title": "React Native 0.84 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     },
     {
@@ -1931,7 +1931,7 @@
       "history": [
         {
           "change": "generated from endoflife.date",
-          "date": "2026-11-11"
+          "date": "2026-11-18"
         }
       ],
       "id": "runtime/react-native-0.85-support",
@@ -1943,14 +1943,14 @@
           "archive": null,
           "kind": "primary",
           "quote": "0.85.x | 2026-03-02 | 2026-04-06 | Unsupported",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://reactnative.dev/docs/releases"
         },
         {
           "archive": null,
           "kind": "secondary",
           "quote": "0.85 2026-04-07 false true 2026-08-11 true 2026-10-12",
-          "retrieved": "2026-11-11",
+          "retrieved": "2026-11-18",
           "url": "https://endoflife.date/api/v1/products/react-native"
         }
       ],
@@ -1964,12 +1964,12 @@
       "title": "React Native 0.85 is unsupported",
       "verification": {
         "by": "eol-generate",
-        "last_verified": "2026-11-11",
-        "next_check": "2026-11-18"
+        "last_verified": "2026-11-18",
+        "next_check": "2026-11-25"
       }
     }
   ],
-  "generated": "2026-11-11",
+  "generated": "2026-11-18",
   "schemaVersion": 1,
   "tables": {
     "action-runtimes": {
