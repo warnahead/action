@@ -6,7 +6,7 @@ METHOD:PUBLISH
 X-WR-CALNAME:warnahead: Google Play
 BEGIN:VEVENT
 UID:google-play/billing-8-2026
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260901
 SUMMARY:Google Play: New apps and updates must use Play Billing Library 8 o
@@ -15,7 +15,7 @@ DESCRIPTION:What happens: Existing apps still work\, but new apps and updat
  es must use supported versions: Play Billing Library 8 or later from Augus
  t 31\, 2026.\nWho: Android apps on Google Play that use the Play Billing L
  ibrary\nExtension until 2026-11-01: On request in Play Console\nLast verif
- ied 2026-11-11
+ ied 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/google-play/billing-8-2026/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -34,7 +34,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:google-play/target-api-2026-existing
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260901
 SUMMARY:Google Play: Existing apps must target API 35 to stay available to 
@@ -44,7 +44,7 @@ DESCRIPTION:What happens: Existing apps must target Android 15 (API level 3
  S higher than your app's target API level.\nWho: Android phone and tablet 
  apps already published on Google Play (Wear OS needs API 34\, Android TV A
  PI 33\, Android XR API 34\, Android Automotive OS API 32)\nExtension until
-  2026-11-01: On request in Play Console\nLast verified 2026-11-11
+  2026-11-01: On request in Play Console\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/google-play/target-api-2026-exist
  ing/
 STATUS:CONFIRMED
@@ -64,7 +64,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:google-play/target-api-2026-updates
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260901
 SUMMARY:Google Play: New apps and updates must target API 36
@@ -72,7 +72,7 @@ DESCRIPTION:What happens: New apps and app updates must target Android 16 (
  API level 36) or higher to be submitted to Google Play.\nWho: Android phon
  e and tablet apps published on Google Play (Wear OS and Android Automotive
   OS need API 35\, Android TV and Android XR need API 34)\nExtension until 
- 2026-11-01: On request in Play Console\nLast verified 2026-11-11
+ 2026-11-01: On request in Play Console\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/google-play/target-api-2026-updat
  es/
 STATUS:CONFIRMED
@@ -91,7 +91,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:google-play/billing-9-2027
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20270831
 DTEND;VALUE=DATE:20270901
 SUMMARY:Google Play: New apps and updates must use Play Billing Library 9 o
@@ -100,7 +100,7 @@ DESCRIPTION:What happens: Existing apps still work\, but new apps and updat
  es must use supported versions: Play Billing Library 9 or later from Augus
  t 31\, 2027.\nWho: Android apps on Google Play that use the Play Billing L
  ibrary\nExtension until 2027-11-01: On request in Play Console\nLast verif
- ied 2026-11-11
+ ied 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/google-play/billing-9-2027/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -119,14 +119,14 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:google-play/target-api-2027-updates
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20270831
 DTEND;VALUE=DATE:20270901
 SUMMARY:Google Play: New apps and updates expected to need API 37
 DESCRIPTION:What happens: Expected\, not announced: new apps and app update
  s must target Android 17 (API level 37) or higher to be submitted to Googl
  e Play.\nWho: Android phone and tablet apps published on Google Play\nDate
-  precision: Aug 2027\nLast verified 2026-11-11
+  precision: Aug 2027\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/google-play/target-api-2027-updat
  es/
 STATUS:TENTATIVE

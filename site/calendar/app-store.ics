@@ -6,14 +6,14 @@ METHOD:PUBLISH
 X-WR-CALNAME:warnahead: App Store
 BEGIN:VEVENT
 UID:app-store/sdk-floor-2026
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260428
 DTEND;VALUE=DATE:20260429
 SUMMARY:App Store: Uploads must be built with Xcode 26 and the 26 SDKs
 DESCRIPTION:What happens: Apps uploaded to App Store Connect must be built 
  with Xcode 26 or later using an SDK for iOS 26\, iPadOS 26\, tvOS 26\, vis
  ionOS 26\, or watchOS 26.\nWho: Apps uploaded to App Store Connect (iOS\, 
- iPadOS\, tvOS\, visionOS and watchOS)\nLast verified 2026-11-11
+ iPadOS\, tvOS\, visionOS and watchOS)\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/app-store/sdk-floor-2026/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -32,13 +32,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:app-store/min-ios-13-2026
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20260909
 DTEND;VALUE=DATE:20260910
 SUMMARY:App Store: iOS and iPadOS uploads must target iOS 13 or later
 DESCRIPTION:What happens: iOS and iPadOS apps uploaded to App Store Connect
   must target iOS 13 or later.\nWho: iOS and iPadOS apps uploaded to App St
- ore Connect\nLast verified 2026-11-11
+ ore Connect\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/app-store/min-ios-13-2026/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -57,7 +57,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:app-store/min-ios-15-2027
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:App Store: iOS and iPadOS uploads must target iOS 15 or later from 
@@ -65,7 +65,7 @@ SUMMARY:App Store: iOS and iPadOS uploads must target iOS 15 or later from
 DESCRIPTION:What happens: Starting April 2027: iOS and iPadOS apps must be 
  built with the iOS & iPadOS 27 SDK or later and target iOS 15 or later.\nW
  ho: iOS and iPadOS apps uploaded to App Store Connect\nDate precision: Apr
-  2027\nLast verified 2026-11-11
+  2027\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/app-store/min-ios-15-2027/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -84,7 +84,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:app-store/sdk-floor-2027
-DTSTAMP:20261111T000000Z
+DTSTAMP:20261118T000000Z
 DTSTART;VALUE=DATE:20270401
 DTEND;VALUE=DATE:20270402
 SUMMARY:App Store: Uploads must be built with the 27 SDKs from April 2027
@@ -92,7 +92,7 @@ DESCRIPTION:What happens: Starting April 2027\, apps and games uploaded to
  App Store Connect need to meet the following minimum requirements: iOS and
   iPadOS apps must be built with the iOS 27 & iPadOS 27 SDK or later.\nWho:
   Apps uploaded to App Store Connect (tvOS\, visionOS and watchOS apps need
-  their 27 SDKs too)\nDate precision: Apr 2027\nLast verified 2026-11-11
+  their 27 SDKs too)\nDate precision: Apr 2027\nLast verified 2026-11-18
 URL:https://warnahead.pages.dev/deadlines/app-store/sdk-floor-2027/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
