@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Published from this repository's release workflow with npm provenance. No change in behaviour from 0.1.0.
+
 ## 0.1.0
 
 First release.
