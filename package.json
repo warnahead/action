@@ -4,6 +4,10 @@
   "description": "Warns you before store and CI deadlines block your mobile app release",
   "author": "Aman Gupta (https://github.com/guptaaman678)",
   "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warnahead/action.git"
+  },
   "type": "module",
   "bin": {
     "warnahead": "dist/cli.mjs"
