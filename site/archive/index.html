@@ -14,10 +14,13 @@
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
-    <header>
+    <header class="site-header">
+      <a class="brand" href="/"><svg class="brand-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#1e293b"/><path d="M32 10.24 L56.32 52.48 L7.68 52.48 Z" fill="#e0a526"/><rect x="29.76" y="24.32" width="4.48" height="15.36" fill="#1e293b"/><rect x="29.76" y="42.88" width="4.48" height="4.48" fill="#1e293b"/></svg><span class="wordmark">warnahead</span></a>
       <nav aria-label="Site">
-        <a class="home" href="/">warnahead</a>
-        <a href="/archive/">Older deadlines</a>
+        <ul>
+          <li><a href="/">Deadlines</a></li>
+          <li><a href="/archive/" aria-current="page">Older deadlines</a></li>
+        </ul>
       </nav>
     </header>
     <main id="content">
@@ -62,7 +65,7 @@
             <thead>
               <tr>
                 <th scope="col">Date</th>
-                <th scope="col">Days left</th>
+                <th scope="col">Days ago</th>
                 <th scope="col">Platform</th>
                 <th scope="col">Deadline</th>
                 <th scope="col">Status</th>
@@ -73,7 +76,7 @@
             <tbody>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2025-04-30">
                 <td><time datetime="2025-04-30">2025-04-30</time></td>
-                <td class="num">567 days ago</td>
+                <td class="num" data-days="2025-04-30" data-precision="day">567 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-18-eol/">Node.js 18 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -82,7 +85,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2025-06-01">
                 <td><time datetime="2025-06-01">2025-06-01</time></td>
-                <td class="num">535 days ago</td>
+                <td class="num" data-days="2025-06-01" data-precision="day">535 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-23-eol/">Node.js 23 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -91,7 +94,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2025-06-12">
                 <td><time datetime="2025-06-12">2025-06-12</time></td>
-                <td class="num">524 days ago</td>
+                <td class="num" data-days="2025-06-12" data-precision="day">524 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.77-support/">React Native 0.77 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -100,7 +103,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2025-08-12">
                 <td><time datetime="2025-08-12">2025-08-12</time></td>
-                <td class="num">463 days ago</td>
+                <td class="num" data-days="2025-08-12" data-precision="day">463 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.78-support/">React Native 0.78 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -109,7 +112,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2025-10-08">
                 <td><time datetime="2025-10-08">2025-10-08</time></td>
-                <td class="num">406 days ago</td>
+                <td class="num" data-days="2025-10-08" data-precision="day">406 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.79-support/">React Native 0.79 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -118,7 +121,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2025-12-10">
                 <td><time datetime="2025-12-10">2025-12-10</time></td>
-                <td class="num">343 days ago</td>
+                <td class="num" data-days="2025-12-10" data-precision="day">343 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.80-support/">React Native 0.80 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -127,7 +130,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2026-02-11">
                 <td><time datetime="2026-02-11">2026-02-11</time></td>
-                <td class="num">280 days ago</td>
+                <td class="num" data-days="2026-02-11" data-precision="day">280 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.81-support/">React Native 0.81 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -136,7 +139,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2026-04-07">
                 <td><time datetime="2026-04-07">2026-04-07</time></td>
-                <td class="num">225 days ago</td>
+                <td class="num" data-days="2026-04-07" data-precision="day">225 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.82-support/">React Native 0.82 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -145,7 +148,7 @@
               </tr>
               <tr data-platform="app-store" data-status="in-effect" data-effective="2026-04-28">
                 <td><time datetime="2026-04-28">2026-04-28</time></td>
-                <td class="num">204 days ago</td>
+                <td class="num" data-days="2026-04-28" data-precision="day">204 days ago</td>
                 <td>App Store</td>
                 <th scope="row"><a href="/deadlines/app-store/sdk-floor-2026/">Uploads must be built with Xcode 26 and the 26 SDKs</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -154,7 +157,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2026-04-30">
                 <td><time datetime="2026-04-30">2026-04-30</time></td>
-                <td class="num">202 days ago</td>
+                <td class="num" data-days="2026-04-30" data-precision="day">202 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-20-eol/">Node.js 20 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -163,7 +166,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2026-06-01">
                 <td><time datetime="2026-06-01">2026-06-01</time></td>
-                <td class="num">170 days ago</td>
+                <td class="num" data-days="2026-06-01" data-precision="day">170 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-25-eol/">Node.js 25 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -172,7 +175,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2026-06-09">
                 <td><time datetime="2026-06-09">2026-06-09</time></td>
-                <td class="num">162 days ago</td>
+                <td class="num" data-days="2026-06-09" data-precision="day">162 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.83-support/">React Native 0.83 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -181,7 +184,7 @@
               </tr>
               <tr data-platform="runtime" data-status="in-effect" data-effective="2026-08-11">
                 <td><time datetime="2026-08-11">2026-08-11</time></td>
-                <td class="num">99 days ago</td>
+                <td class="num" data-days="2026-08-11" data-precision="day">99 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.84-support/">React Native 0.84 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
@@ -191,6 +194,7 @@
             </tbody>
           </table>
         </div>
+        <p class="muted" data-asof>Days are counted from the dataset date, <time datetime="2026-11-18">2026-11-18</time>.</p>
       </section>
     </main>
     <footer>
