@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Older deadlines | warnahead</title>
+    <meta name="description" content="Older mobile platform deadlines that are already in effect, each with its source and the date it was last verified.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="alternate" type="application/atom+xml" title="warnahead: dataset changes" href="/feed.xml">
+    <script src="/filter.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header>
+      <nav aria-label="Site">
+        <a class="home" href="/">warnahead</a>
+        <a href="/archive/">Older deadlines</a>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>Older deadlines</h1>
+      <p>Deadlines that took effect more than 90 days before the dataset date. Their pages and calendar events stay as they were.</p>
+      <p>Last verified: <time datetime="2026-11-18">2026-11-18</time></p>
+      <section aria-labelledby="by-date">
+        <h2 id="by-date">Older deadlines</h2>
+        <div id="filters" class="filters" role="search" aria-label="Filter deadlines" data-table="deadlines" hidden>
+          <div class="field">
+            <label for="f-platform">Platform</label>
+            <select id="f-platform" name="platform">
+                <option value="">All</option>
+                <option value="app-store">App Store</option>
+                <option value="runtime">Runtimes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-status">Status</label>
+            <select id="f-status" name="status">
+                <option value="">All</option>
+                <option value="in-effect">In effect</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-from">From</label>
+            <input id="f-from" name="from" type="date">
+          </div>
+          <div class="field">
+            <label for="f-to">To</label>
+            <input id="f-to" name="to" type="date">
+          </div>
+          <div class="field">
+            <label for="f-q">Search</label>
+            <input id="f-q" name="q" type="search">
+          </div>
+          <button type="button" data-clear>Clear filters</button>
+        </div>
+        <p id="filter-count" class="muted" aria-live="polite"></p>
+        <div class="scroll">
+          <table id="deadlines">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Days left</th>
+                <th scope="col">Platform</th>
+                <th scope="col">Deadline</th>
+                <th scope="col">Status</th>
+                <th scope="col">Source</th>
+                <th scope="col">Last verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-04-30">
+                <td><time datetime="2025-04-30">2025-04-30</time></td>
+                <td class="num">567 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-18-eol/">Node.js 18 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-06-01">
+                <td><time datetime="2025-06-01">2025-06-01</time></td>
+                <td class="num">535 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-23-eol/">Node.js 23 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-06-12">
+                <td><time datetime="2025-06-12">2025-06-12</time></td>
+                <td class="num">524 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.77-support/">React Native 0.77 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-08-12">
+                <td><time datetime="2025-08-12">2025-08-12</time></td>
+                <td class="num">463 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.78-support/">React Native 0.78 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-10-08">
+                <td><time datetime="2025-10-08">2025-10-08</time></td>
+                <td class="num">406 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.79-support/">React Native 0.79 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-12-10">
+                <td><time datetime="2025-12-10">2025-12-10</time></td>
+                <td class="num">343 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.80-support/">React Native 0.80 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-02-11">
+                <td><time datetime="2026-02-11">2026-02-11</time></td>
+                <td class="num">280 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.81-support/">React Native 0.81 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-04-07">
+                <td><time datetime="2026-04-07">2026-04-07</time></td>
+                <td class="num">225 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.82-support/">React Native 0.82 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="app-store" data-status="in-effect" data-effective="2026-04-28">
+                <td><time datetime="2026-04-28">2026-04-28</time></td>
+                <td class="num">204 days ago</td>
+                <td>App Store</td>
+                <th scope="row"><a href="/deadlines/app-store/sdk-floor-2026/">Uploads must be built with Xcode 26 and the 26 SDKs</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://developer.apple.com/news/upcoming-requirements/">developer.apple.com</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-04-30">
+                <td><time datetime="2026-04-30">2026-04-30</time></td>
+                <td class="num">202 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-20-eol/">Node.js 20 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-06-01">
+                <td><time datetime="2026-06-01">2026-06-01</time></td>
+                <td class="num">170 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-25-eol/">Node.js 25 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-06-09">
+                <td><time datetime="2026-06-09">2026-06-09</time></td>
+                <td class="num">162 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.83-support/">React Native 0.83 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-08-11">
+                <td><time datetime="2026-08-11">2026-08-11</time></td>
+                <td class="num">99 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/react-native-0.84-support/">React Native 0.84 is unsupported</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
+                <td><time datetime="2026-11-18">2026-11-18</time></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p><a href="/">warnahead</a> by <a href="https://github.com/guptaaman678">Aman Gupta</a>. Not affiliated with or endorsed by Google, Apple, Expo or GitHub.</p>
+      <p>A clean result means nothing warnahead can detect, not that nothing is due. Check the sources before you rely on a date.</p>
+      <ul class="links">
+        <li><a href="https://github.com/warnahead/action/blob/main/LICENSE.md">EULA</a></li>
+        <li><a href="https://github.com/warnahead/action/blob/main/DATA-TERMS.md">Data terms</a></li>
+        <li><a href="/data/v1/deadlines.json">Dataset (JSON)</a></li>
+        <li><a href="/feed.xml">Changes (Atom feed)</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

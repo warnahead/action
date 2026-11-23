@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://warnahead.pages.dev/feed.xml</id>
+  <title type="text">warnahead: dataset changes</title>
+  <subtitle type="text">New deadlines, moved dates and status changes in the warnahead dataset, one entry per change.</subtitle>
+  <updated>2026-11-11T00:00:00Z</updated>
+  <link rel="self" type="application/atom+xml" href="https://warnahead.pages.dev/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/"/>
+  <author>
+    <name>Aman Gupta</name>
+    <uri>https://github.com/guptaaman678</uri>
+  </author>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:dataset/2026-11-11/first</id>
+    <title type="text">First published dataset: 29 deadlines</title>
+    <updated>2026-11-11T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/"/>
+    <content type="text">The dataset of 2026-11-11 lists 29 deadlines. Later changes appear in this feed one by one.</content>
+  </entry>
+</feed>
