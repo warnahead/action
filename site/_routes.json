@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/data/*",
+    "/calendar/*",
+    "/style.css",
+    "/filter.js",
+    "/favicon.svg",
+    "/favicon.ico",
+    "/apple-touch-icon.png"
+  ]
+}
