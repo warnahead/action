@@ -6,14 +6,14 @@ METHOD:PUBLISH
 X-WR-CALNAME:warnahead: GitHub Actions
 BEGIN:VEVENT
 UID:github-actions/node20-actions
-DTSTAMP:20261118T000000Z
+DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20260923
 DTEND;VALUE=DATE:20260924
 SUMMARY:GitHub Actions: Actions declaring node20 now run on Node 24
 DESCRIPTION:What happens: Node 20 is no longer available on GitHub Actions 
  runners. Runners now use Node 24 for JavaScript actions.\nWho: JavaScript 
  actions whose action.yml declares runs.using node20\, on GitHub-hosted run
- ners\nLast verified 2026-11-18
+ ners\nLast verified 2026-11-24
 URL:https://warnahead.pages.dev/deadlines/github-actions/node20-actions/
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -32,7 +32,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:github-actions/ubuntu-latest-26.04
-DTSTAMP:20261118T000000Z
+DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20261019
 DTEND;VALUE=DATE:20261020
 SUMMARY:GitHub Actions: ubuntu-latest moves to Ubuntu 26.04
@@ -40,7 +40,7 @@ DESCRIPTION:What happens: ubuntu-latest moves from Ubuntu 24.04 to Ubuntu 2
  6.04: This change will be rolled out over a period of several weeks beginn
  ing October 19\, 2026. We plan to complete the migration by November 19\, 
  2026.\nWho: GitHub-hosted x64 jobs on ubuntu-latest\nLast verified 2026-11
- -18
+ -24
 URL:https://warnahead.pages.dev/deadlines/github-actions/ubuntu-latest-26.0
  4/
 STATUS:CONFIRMED
@@ -58,13 +58,13 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:github-actions/macos-14-retirement
-DTSTAMP:20261118T000000Z
+DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:GitHub Actions: macOS 14 runner images are retired
 DESCRIPTION:What happens: GitHub Actions will fully retire all macOS 14 ima
  ges on November 2\, 2026.\nWho: GitHub-hosted jobs on macos-14\, macos-14-
- large or macos-14-xlarge\nLast verified 2026-11-18
+ large or macos-14-xlarge\nLast verified 2026-11-24
 URL:https://warnahead.pages.dev/deadlines/github-actions/macos-14-retiremen
  t/
 STATUS:CONFIRMED
@@ -82,7 +82,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:github-actions/ubuntu-22.04-retirement
-DTSTAMP:20261118T000000Z
+DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20270417
 DTEND;VALUE=DATE:20270418
 SUMMARY:GitHub Actions: Ubuntu 22.04 runner images are retired on April 17\
@@ -90,7 +90,7 @@ SUMMARY:GitHub Actions: Ubuntu 22.04 runner images are retired on April 17\
 DESCRIPTION:What happens: Deprecation will begin on September 17th\, 2026 a
  nd the images will be fully unsupported by April 17th\, 2027.\nWho: GitHub
  -hosted jobs on ubuntu-22.04 or ubuntu-22.04-arm (brownouts fail some jobs
-  before the retirement)\nLast verified 2026-11-18
+  before the retirement)\nLast verified 2026-11-24
 URL:https://warnahead.pages.dev/deadlines/github-actions/ubuntu-22.04-retir
  ement/
 STATUS:CONFIRMED
