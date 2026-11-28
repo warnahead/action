@@ -391,6 +391,192 @@
       }
     },
     {
+      "applies_to": "Android apps that pin NDK 26.3.11579264 and are built on a GitHub-hosted image without it (the removal started on 2026-01-12 and took about 3 days). Gradle can install it during the build when its license is accepted; otherwise the build can fail.",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Android NDK 26 will be removed from all supported images."
+      },
+      "detect": {
+        "affected": {
+          "all": [
+            {
+              "eq": "26.3.11579264",
+              "fact": "gha.pinnedNdk"
+            },
+            {
+              "eq": false,
+              "fact": "gha.pinnedNdkInstalled"
+            }
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-01-12",
+      "extension": null,
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Install the NDK in the workflow before the build (sdkmanager --install \"ndk;26.3.11579264\"), or set ndkVersion to a version on the image."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "github-actions/ndk-26-removal-2026",
+      "kind": "removal",
+      "platform": "github-actions",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android NDK 26 will be removed from all supported images.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/13467"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Image deployment will start on Monday January 12th, 2026 and will take about 3 days.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/13467"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Projects that depend on Android NDK 26 will stop working.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/13467"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "26.3.11579264 27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "Android Gradle Plugin 4.2.0+ can automatically install the required NDK and CMake the first time you build your project if their licenses have been accepted in advance.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/studio/projects/install-ndk"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "ci",
+        "github-actions",
+        "android",
+        "native"
+      ],
+      "timezone": "UTC",
+      "title": "Android NDK 26 is removed from the GitHub runner images",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Android apps that pin NDK 28.2.13676358 and are built on a GitHub-hosted image without it (Ubuntu and Windows since October 2026; the macOS images still had it on 2026-11-24). Gradle can install it during the build when its license is accepted; otherwise the build can fail.",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Only workflows that explicitly use NDK 28 (via ndkVersion or an NDK 28 path) are affected once it's removed."
+      },
+      "detect": {
+        "affected": {
+          "all": [
+            {
+              "eq": "28.2.13676358",
+              "fact": "gha.pinnedNdk"
+            },
+            {
+              "eq": false,
+              "fact": "gha.pinnedNdkInstalled"
+            }
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-10-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Install the NDK in the workflow before the build (sdkmanager --install \"ndk;28.2.13676358\"), or set ndkVersion to a version on the image."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "github-actions/ndk-28-removal-2026",
+      "kind": "removal",
+      "platform": "github-actions",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android NDK 28 is being removed from the runner images, and NDK 30 (LTS) is being added.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/14745"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "From 2026-10-01 onward (at least two weeks after this announcement).",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/14745"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Only workflows that explicitly use NDK 28 (via ndkVersion or an NDK 28 path) are affected once it's removed.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/14745"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "Android Gradle Plugin 4.2.0+ can automatically install the required NDK and CMake the first time you build your project if their licenses have been accepted in advance.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/studio/projects/install-ndk"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "ci",
+        "github-actions",
+        "android",
+        "native"
+      ],
+      "timezone": "UTC",
+      "title": "Android NDK 28 is removed from the GitHub runner images",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "JavaScript actions whose action.yml declares runs.using node20, on GitHub-hosted runners",
       "consequence": {
         "mode": "warning-only",
@@ -579,6 +765,92 @@
       }
     },
     {
+      "applies_to": "Android Automotive OS apps submitted to Google Play whose manifest requires the Android Automotive OS feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Android Automotive OS apps and app updates must target Android 15 (API level 35) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 35
+        },
+        "requires": [
+          "android.app",
+          "automotive.app"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 35 or higher in the Android Automotive OS app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/automotive-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new Android Automotive OS app, you must target Android 15 (API level 35) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When are Android Automotive OS app submissions required to target this level? New apps App updates Android 15 (API level 35) or higher August 31, 2026 August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "To be distributed to cars through Google Play, apps built for Android Automotive OS must include a",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/training/cars/platforms/automotive-os"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "android-automotive"
+      ],
+      "timezone": "UTC",
+      "title": "New Android Automotive OS apps and updates must target API 35",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Android apps on Google Play that use the Play Billing Library",
       "consequence": {
         "mode": "blocks-release",
@@ -730,6 +1002,342 @@
       }
     },
     {
+      "applies_to": "Flutter phone and tablet apps already published on Google Play whose Gradle script takes targetSdk from flutter.targetSdkVersion",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "hides-app",
+        "text": "Existing apps must target Android 15 (API level 35) or higher to remain available to new users on devices running Android OS higher than your app's target API level."
+      },
+      "detect": {
+        "affected": {
+          "fact": "flutter.targetSdk",
+          "lt": 35
+        },
+        "requires": [
+          "android.app",
+          "flutter.setsTargetSdk",
+          "android.handheld"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Upgrade to Flutter 3.27 or later (3.35 or later to publish updates; table flutter-sdk-defaults), or set targetSdk = 35 or higher in the app module (36 to publish updates)."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "google-play/flutter-target-api-2026-existing",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Existing apps must target Android 15 (API level 35) or higher to remain available to new users on devices running Android OS higher than your app's target API level.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "existing apps (across mobile and Android Auto) must target Android 15 (API level 35) or higher by August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "targetSdk = flutter.targetSdkVersion",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/templates/app/android-kotlin.tmpl/app/build.gradle.kts.tmpl"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "flutter"
+      ],
+      "timezone": "UTC",
+      "title": "Existing Flutter apps must target API 35 to stay available to new users",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Flutter phone and tablet apps submitted to Google Play whose Gradle script takes targetSdk from flutter.targetSdkVersion",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "flutter.targetSdk",
+          "lt": 36
+        },
+        "requires": [
+          "android.app",
+          "flutter.setsTargetSdk",
+          "android.handheld"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Upgrade to Flutter 3.35 or later (table flutter-sdk-defaults), or set targetSdk = 36 in the app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/flutter-target-api-2026-updates",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "targetSdk = flutter.targetSdkVersion",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/templates/app/android-kotlin.tmpl/app/build.gradle.kts.tmpl"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "flutter"
+      ],
+      "timezone": "UTC",
+      "title": "New Flutter apps and updates must target API 36",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Flutter phone and tablet apps submitted to Google Play whose Gradle script takes targetSdk from flutter.targetSdkVersion",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New and updated apps are required to target API level 37 (Android 17): August 2027, no day published yet."
+      },
+      "detect": {
+        "affected": {
+          "fact": "flutter.targetSdk",
+          "lt": 37
+        },
+        "requires": [
+          "android.app",
+          "flutter.setsTargetSdk",
+          "android.handheld"
+        ]
+      },
+      "effective": "2027-08-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Before August 2027, upgrade to a Flutter release whose default targetSdk is 37 (table flutter-sdk-defaults; none on 2026-11-24), or set targetSdk = 37 in the app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/flutter-target-api-2027-updates",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "August 2027 New and updated apps are required to target API level 37 (Android 17).",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "targetSdk = flutter.targetSdkVersion",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/templates/app/android-kotlin.tmpl/app/build.gradle.kts.tmpl"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "flutter"
+      ],
+      "timezone": "UTC",
+      "title": "New Flutter apps and updates must target API 37",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Android phone and tablet apps submitted to Google Play that target API 35 or higher",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "App updates that target Android 15 (API level 35) or higher and do not support 16 KB memory page sizes on 64-bit devices can't be released on Google Play."
+      },
+      "detect": {
+        "affected": {
+          "all": [
+            {
+              "fact": "pageSize.targetSdk",
+              "gte": 35
+            },
+            {
+              "eq": false,
+              "fact": "pageSize.aligned"
+            }
+          ]
+        },
+        "requires": [
+          "android.app",
+          "android.handheld"
+        ]
+      },
+      "effective": "2027-02-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "react-native",
+          "text": "Upgrade to React Native 0.77 or higher (for Expo, an SDK that has it) and update libraries with native code.",
+          "when": {
+            "fact": "rn.version",
+            "semverLt": "0.77.0"
+          }
+        },
+        {
+          "context": "expo-cng",
+          "text": "Update the dependencies with native code to versions aligned to 16 KB, then check the release build with warnahead --check-binaries."
+        },
+        {
+          "context": "gradle",
+          "text": "Build native code with NDK 28 or higher and Android Gradle plugin 8.5.1 or higher, update prebuilt libraries, then check the release build with warnahead --check-binaries."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/page-size-16kb-updates",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Starting February 1, 2027, if your app updates don't support 16 KB memory page sizes, you won't be able to release these updates.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "apps targeting Android 15 (API level 35) and higher must support 16 KB memory page sizes on 64-bit devices on Google Play",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "NDK version r28 and higher compile 16 KB-aligned by default.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "you need to upgrade to Android Gradle Plugin (AGP) version 8.5.1 or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "With the 0.77 release, React Native is ready to fully support 16 KB page size",
+          "retrieved": "2026-11-24",
+          "url": "https://reactnative.dev/blog/2025/01/21/version-0.77"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "native"
+      ],
+      "timezone": "UTC",
+      "title": "App updates must support 16 KB memory pages",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Android phone and tablet apps already published on Google Play (Wear OS needs API 34, Android TV API 33, Android XR API 34, Android Automotive OS API 32)",
       "consequence": {
         "mode": "hides-app",
@@ -809,7 +1417,7 @@
       }
     },
     {
-      "applies_to": "Android phone and tablet apps published on Google Play (Wear OS and Android Automotive OS need API 35, Android TV and Android XR need API 34)",
+      "applies_to": "Android phone and tablet apps submitted to Google Play (Wear OS and Android Automotive OS need API 35, Android TV and Android XR need API 34)",
       "consequence": {
         "mode": "blocks-release",
         "text": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play."
@@ -850,6 +1458,10 @@
         {
           "change": "created",
           "date": "2026-11-11"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
         }
       ],
       "id": "google-play/target-api-2026-updates",
@@ -888,7 +1500,7 @@
       }
     },
     {
-      "applies_to": "Android phone and tablet apps published on Google Play",
+      "applies_to": "Android phone and tablet apps submitted to Google Play",
       "consequence": {
         "mode": "blocks-release",
         "text": "New and updated apps are required to target API level 37 (Android 17): August 2027, no day published yet."
@@ -930,6 +1542,10 @@
         {
           "change": "expected to announced: Google named August 2027 for API 37 in November 2026; date and floor unchanged, no day published",
           "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
         }
       ],
       "id": "google-play/target-api-2027-updates",
@@ -958,6 +1574,253 @@
         "by": "guptaaman678",
         "last_verified": "2026-11-24",
         "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Android TV apps submitted to Google Play whose manifest requires the Android TV feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Android TV apps and app updates must target Android 14 (API level 34) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 34
+        },
+        "requires": [
+          "android.app",
+          "tv.app"
+        ]
+      },
+      "effective": "2025-08-31",
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 34 or higher in the Android TV app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/tv-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new TV app, you must target Android 14 (API level 34) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android 14 (API level 34) or higher August 31, 2025 August 31, 2025",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "If you set the required attribute value to true, Google Play will only make your app available on Android TV OS.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/training/tv/get-started/create"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "android-tv"
+      ],
+      "timezone": "UTC",
+      "title": "New Android TV apps and updates must target API 34",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Wear OS apps submitted to Google Play whose manifest requires the Wear OS feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Wear OS apps and app updates must target Android 15 (API level 35) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 35
+        },
+        "requires": [
+          "android.app",
+          "wear.app"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 35 or higher in the Wear OS app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/wear-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new Wear app, you must target Android 15 (API level 35) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android 15(API level 35) or higher August 31, 2026 August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "For the Play Store to recognize your app as a Wear OS app, you must declare a specific",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/training/wearables/packaging"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "wear-os"
+      ],
+      "timezone": "UTC",
+      "title": "New Wear OS apps and updates must target API 35",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Android XR apps submitted to Google Play whose manifest requires the Android XR feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Android XR apps and app updates must target Android 14 (API level 34) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 34
+        },
+        "requires": [
+          "android.app",
+          "xr.app"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 34 or higher in the Android XR app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/xr-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new Android XR app, you must target Android 14 (API level 34) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android 14 (API level 34) or higher August 31, 2026 August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Apps that are built using the Jetpack XR SDK must include this feature in the app manifest.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/develop/xr/jetpack-xr-sdk/build-immersive"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "android-xr"
+      ],
+      "timezone": "UTC",
+      "title": "New Android XR apps and updates must target API 34",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
       }
     },
     {
@@ -4335,6 +5198,198 @@
         "next_check": "2026-12-08"
       }
     },
+    "eas-android-images": {
+      "area": "deeper-mobile",
+      "description": "Every Android server image on the EAS Build infrastructure page, with the aliases the page lists (latest, sdk-<N>), its NDK and whether the page marks it as deprecated (without a date). An eas.json image that is not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "eas-android-images",
+      "key": "image",
+      "rows": [
+        {
+          "aliases": [
+            "sdk-58"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-58",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "latest",
+            "sdk-57"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-57",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-56"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-26.04-jdk-17-ndk-r27b",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-55"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-24.04-jdk-17-ndk-r27b-sdk-55",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-54"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-24.04-jdk-17-ndk-r27b",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-53"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-17-ndk-r26b",
+          "ndk": "26.1.10909125",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-51",
+            "sdk-52"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "Legacy ubuntu-22.04-jdk-17-ndk-r26b-like",
+          "ndk": "26.1.10909125",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-50"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-17-ndk-r25b",
+          "ndk": "25.1.8937393",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-49"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-11-ndk-r23b",
+          "ndk": "23.1.7779620",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-17-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-11-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-22.04-jdk-8-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-11-ndk-r23b",
+          "ndk": "23.1.7779620",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-11-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-8-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-11-ndk-r19c",
+          "ndk": "19.2.5345600",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-8-ndk-r19c",
+          "ndk": "19.2.5345600",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-58",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "SDK aliases will be updated with every new SDK release.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        }
+      ],
+      "title": "EAS Build Android images and their NDK",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
     "eas-images": {
       "description": "Every iOS server image on the EAS Build infrastructure page, with the aliases the page lists (latest, sdk-<N>, former names), macOS and Xcode. An eas.json image that is not here, and the auto alias, resolve to unknown.",
       "history": [
@@ -4883,6 +5938,236 @@
         "next_check": "2026-12-08"
       }
     },
+    "flutter-sdk-defaults": {
+      "area": "deeper-mobile",
+      "description": "targetSdk, compileSdk and minSdk that flutter.targetSdkVersion and its siblings give in each Flutter stable minor, read at its last release (the first one has the same values). Rows marked inferred were read from the release tags only. A minor not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "flutter-sdk-defaults",
+      "key": "flutter",
+      "rows": [
+        {
+          "compileSdk": 33,
+          "confidence": "inferred",
+          "flutter": "3.16",
+          "last": "3.16.9",
+          "minSdk": 19,
+          "source": "https://github.com/flutter/flutter/blob/3.16.9/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 33
+        },
+        {
+          "compileSdk": 34,
+          "confidence": "inferred",
+          "flutter": "3.19",
+          "last": "3.19.6",
+          "minSdk": 19,
+          "source": "https://github.com/flutter/flutter/blob/3.19.6/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 33
+        },
+        {
+          "compileSdk": 34,
+          "confidence": "inferred",
+          "flutter": "3.22",
+          "last": "3.22.3",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.22.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 34
+        },
+        {
+          "compileSdk": 34,
+          "confidence": "inferred",
+          "flutter": "3.24",
+          "last": "3.24.5",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.24.5/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 34
+        },
+        {
+          "compileSdk": 35,
+          "confidence": "inferred",
+          "flutter": "3.27",
+          "last": "3.27.4",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.27.4/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 35
+        },
+        {
+          "compileSdk": 35,
+          "confidence": "inferred",
+          "flutter": "3.29",
+          "last": "3.29.3",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.29.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 35
+        },
+        {
+          "compileSdk": 35,
+          "confidence": "inferred",
+          "flutter": "3.32",
+          "last": "3.32.8",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.32.8/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 35
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "inferred",
+          "flutter": "3.35",
+          "last": "3.35.7",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.35.7/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.38",
+          "last": "3.38.10",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.38.10/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.41",
+          "last": "3.41.9",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.41.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.44",
+          "last": "3.44.9",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.44.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.47",
+          "last": "3.47.9",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.47.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.50",
+          "last": "3.50.1",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "static int targetSdkVersion = 33",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.16.9/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "static int targetSdkVersion = 33",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.19.6/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 34",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.22.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 34",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.24.5/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 35",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.27.4/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 35",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.29.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 35",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.32.8/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.35.7/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.38.10/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.41.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.44.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.47.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        }
+      ],
+      "title": "Default Android SDK levels of Flutter stable releases",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
     "gha-runner-xcode": {
       "description": "Each macOS runner label in the runner-images README, the image it selects, that image's default Xcode and every installed Xcode. Retired and deprecated images are left out; a label not here resolves to unknown.",
       "history": [
@@ -5200,6 +6485,448 @@
         }
       ],
       "title": "GitHub-hosted macOS runner labels and their Xcode",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    "ndk-on-runners": {
+      "area": "deeper-mobile",
+      "description": "Each runner label in the runner-images README whose image has Android tools, with the NDK versions in that image readme. Preview and deprecated images are left out; a label not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "regenerated from the sources",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "ndk-on-runners",
+      "key": "label",
+      "rows": [
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15-intel",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15-large",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15-xlarge",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26-intel",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26-large",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26-xlarge",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-latest",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-latest-large",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 22.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-22.04",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 24.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-24.04",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 26.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-26.04",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2604-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 26.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-latest",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2604-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2022",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-2022",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2025",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-2025",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2025",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-2025-vs2026",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2025",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-latest",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Xcode 27",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "xcode-27",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Xcode 27",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "xcode-27-xlarge",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-latest or ubuntu-26.04",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2604-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-24.04",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-22.04",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "xcode-27 or xcode-27-xlarge",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-latest-large, macos-26-intel, macos-26-large",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-latest, macos-26 or macos-26-xlarge",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-15-large, or macos-15-intel",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-15, or macos-15-xlarge",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-latest, windows-2025, or windows-2025-vs2026",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-2022",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md"
+        }
+      ],
+      "title": "GitHub-hosted runner labels and their Android NDKs",
       "verification": {
         "by": "guptaaman678",
         "last_verified": "2026-11-24",

@@ -1,7 +1,7 @@
 # warnahead
 
 warnahead tells you which app store and CI platform deadlines apply to your mobile app repository,
-before they block a release. It reads your Expo or React Native project, your Gradle and Xcode
+before they block a release. It reads your Expo, React Native or Flutter project, your Gradle and Xcode
 settings and your CI workflows, and checks them against a dataset of announced deadlines: Google
 Play target API levels, App Store SDK floors, GitHub Actions runner retirements, Node.js and React
 Native end of life, Play Billing Library versions.
@@ -48,6 +48,7 @@ npx warnahead deadlines --platform google-play
 | `--fail-within <days>`        | Exit 1 when a certain deadline that blocks releases or breaks CI is this many days away or has passed; by default it never fails |
 | `--offline`                   | No network; use the dataset bundled with the package                                                                             |
 | `--eval-config`               | Allow running `npx expo config` for a dynamic `app.config.js` or `app.config.ts`                                                 |
+| `--check-binaries`            | Also read local APK, AAB, AAR and .so files for 16 KB page support; the Action never reads binaries                              |
 | `--data <file\|url>`          | Use another copy of the dataset                                                                                                  |
 
 `warnahead deadlines` lists the dataset without scanning anything.
@@ -61,6 +62,15 @@ The Action runs the same scan in your workflow, writes a job summary, and opens 
 deadline that is due for an app in your repository. Issues get a comment as each threshold is
 crossed, are updated if the date moves, and close themselves when the fix lands. An issue you close
 yourself is never reopened.
+
+Deadlines belong to an area. The CLI and the job summary show every area. The Action opens, updates
+or closes issues for an area added after 0.1, such as `deeper-mobile` (Flutter apps; Wear OS, TV,
+Automotive and XR apps; 16 KB memory pages; Android NDK removals on GitHub runners), and lets it
+fail the job, only when the workflow names it in the `areas` input.
+
+Only a certain finding opens an issue. An issue for a finding that is now inferred or Unknown stays
+open and unchanged, because warnahead closes an issue only when its finding is gone or its dataset
+entry is withdrawn or superseded. Close it yourself if it no longer applies.
 
 ```yaml
 name: warnahead
@@ -84,15 +94,16 @@ jobs:
           thresholds: '60,30,7'
 ```
 
-| Input              | Default               | What it does                                                                                                       |
-| ------------------ | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `path`             | `.`                   | Directory to scan, relative to the workspace                                                                       |
-| `horizon-days`     | `90`                  | Report deadlines due within this many days                                                                         |
-| `thresholds`       | `60,30,7`             | Days before a deadline at which its issue gets a comment                                                           |
-| `mode`             | `issues`              | `issues`, `single-issue` (one rolling issue) or `report-only` (job summary and outputs only)                       |
-| `include-expected` | `false`               | Also act on expected deadlines that are not announced yet                                                          |
-| `fail-within`      | empty                 | Fail the job when a deadline that blocks releases or breaks CI is this many days away or closer; empty never fails |
-| `token`            | `${{ github.token }}` | Token for the issues API and the dataset copy on GitHub                                                            |
+| Input              | Default               | What it does                                                                                                                       |
+| ------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `path`             | `.`                   | Directory to scan, relative to the workspace                                                                                       |
+| `horizon-days`     | `90`                  | Report deadlines due within this many days                                                                                         |
+| `thresholds`       | `60,30,7`             | Days before a deadline at which its issue gets a comment                                                                           |
+| `mode`             | `issues`              | `issues`, `single-issue` (one rolling issue) or `report-only` (job summary and outputs only)                                       |
+| `include-expected` | `false`               | Also act on expected deadlines that are not announced yet                                                                          |
+| `fail-within`      | empty                 | Fail the job when a deadline that blocks releases or breaks CI is this many days away or closer; empty never fails                 |
+| `areas`            | empty                 | Areas added after 0.1 that may also open issues and fail the job, such as `deeper-mobile`; the job summary always shows every area |
+| `token`            | `${{ github.token }}` | Token for the issues API and the dataset copy on GitHub                                                                            |
 
 Outputs: `due-count` (deadlines due within the horizon or passed) and `findings-json` (path to the
 findings file in the `warnahead.findings/1` format).
@@ -170,10 +181,32 @@ warnahead is an aid, not a guarantee, and it is not foolproof. You use it at you
 the linked official source before you rely on a result. See sections 6 and 7 of
 [LICENSE.md](LICENSE.md).
 
+### When is a finding certain?
+
+- **Google Play.** A Google Play finding is certain only when something shows that the app is on
+  Google Play: `stores` in `.warnahead.json`, an EAS submit profile with an `android` key or
+  `eas submit`, fastlane `supply`, the Play upload action, or a README link to the app's own Google
+  Play listing. Without it the finding shows with "if you publish to Google Play", opens no issue and
+  never fails a build.
+- **App Store SDK floors.** They are certain only for build paths that upload: a CI job or fastlane
+  lane that builds for a device and sends the build to TestFlight or App Store Connect (altool,
+  Transporter, `eas submit`, fastlane, an `xcodebuild` export with an upload destination, the
+  TestFlight upload action), an EAS store profile, or a Codemagic or Bitrise workflow that publishes
+  to App Store Connect. Simulator, unsigned, test and internal builds do not count, and an upload of
+  a macOS app does not count as an iOS upload. Without a visible upload path the result is Unknown,
+  never "not affected".
+- **Flutter.** A version pinned only in CI gives an inferred result, which opens no issue; only an
+  FVM pin (`.fvmrc` or `fvm_config.json`) of an exact release of Flutter 3.38 or later that
+  warnahead's table has read, together with Google Play evidence, can give a certain one.
+
 ### Which projects does it understand?
 
 Expo apps, with or without native folders; React Native and native apps through their Gradle
-(`android/`) and Xcode (`ios/`) projects; and CI on GitHub Actions, Codemagic and Bitrise.
+(`android/`) and Xcode (`ios/`) projects; Flutter apps whose Gradle script takes targetSdk from
+`flutter.targetSdkVersion`; and CI on GitHub Actions, Codemagic and Bitrise. Wear OS, TV,
+Automotive and XR apps (the manifest requires the feature) are checked against their own target API
+floors. An Xcode project whose application targets all build for macOS is not checked as an iOS
+app.
 
 ## Security
 

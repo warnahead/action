@@ -11,11 +11,81 @@
     <uri>https://github.com/guptaaman678</uri>
   </author>
   <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/github-actions/ndk-26-removal-2026/added</id>
+    <title type="text">New deadline: Android NDK 26 is removed from the GitHub runner images</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/github-actions/ndk-26-removal-2026/"/>
+    <content type="text">Added with the date 2026-01-12, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/github-actions/ndk-28-removal-2026/added</id>
+    <title type="text">New deadline: Android NDK 28 is removed from the GitHub runner images</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/github-actions/ndk-28-removal-2026/"/>
+    <content type="text">Added with the date 2026-10-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/automotive-target-api-2026/added</id>
+    <title type="text">New deadline: New Android Automotive OS apps and updates must target API 35</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/automotive-target-api-2026/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/flutter-target-api-2026-existing/added</id>
+    <title type="text">New deadline: Existing Flutter apps must target API 35 to stay available to new users</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-2026-existing/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/flutter-target-api-2026-updates/added</id>
+    <title type="text">New deadline: New Flutter apps and updates must target API 36</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-2026-updates/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/flutter-target-api-2027-updates/added</id>
+    <title type="text">New deadline: New Flutter apps and updates must target API 37</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-2027-updates/"/>
+    <content type="text">Added with the date Aug 2027, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/page-size-16kb-updates/added</id>
+    <title type="text">New deadline: App updates must support 16 KB memory pages</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/page-size-16kb-updates/"/>
+    <content type="text">Added with the date 2027-02-01, status Announced.</content>
+  </entry>
+  <entry>
     <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/target-api-2027-updates/status</id>
     <title type="text">Status changed: New apps and updates must target API 37</title>
     <updated>2026-11-24T00:00:00Z</updated>
     <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/target-api-2027-updates/"/>
     <content type="text">The status changed from Expected, not announced to Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/tv-target-api-2026/added</id>
+    <title type="text">New deadline: New Android TV apps and updates must target API 34</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/tv-target-api-2026/"/>
+    <content type="text">Added with the date 2025-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/wear-target-api-2026/added</id>
+    <title type="text">New deadline: New Wear OS apps and updates must target API 35</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/wear-target-api-2026/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/xr-target-api-2026/added</id>
+    <title type="text">New deadline: New Android XR apps and updates must target API 34</title>
+    <updated>2026-11-24T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/xr-target-api-2026/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
   </entry>
   <entry>
     <id>tag:warnahead.pages.dev,2026:dataset/2026-11-11/first</id>

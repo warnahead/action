@@ -23,6 +23,9 @@ inputs:
   fail-within:
     description: Fail the job when a deadline that blocks releases or breaks CI is this many days away or closer; empty never fails
     default: ''
+  areas:
+    description: 'Areas added after version 0.1 that may also open issues and fail the job, separated by commas: deeper-mobile; empty means the areas of 0.1 only'
+    default: ''
   token:
     description: Token for the GitHub issues API and the dataset copy on GitHub
     default: ${{ github.token }}
