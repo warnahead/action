@@ -26,35 +26,44 @@
     <main id="content">
       <h1>Mobile platform deadlines</h1>
       <p>Deadlines that app stores, CI platforms and runtimes set for mobile apps. Every entry links its primary source with a short quote and shows when it was last verified.</p>
-      <p>Last verified: <time datetime="2026-11-24">2026-11-24</time></p>
+      <p>Last verified: <time datetime="2026-11-28">2026-11-28</time></p>
       <section class="summary" aria-labelledby="summary">
-        <h2 id="summary">At a glance <span class="muted">as of <time datetime="2026-11-24">2026-11-24</time></span></h2>
+        <h2 id="summary">At a glance <span class="muted">as of <time datetime="2026-11-28">2026-11-28</time></span></h2>
         <dl>
           <div>
             <dt>Next deadline</dt>
-            <dd><a href="/deadlines/app-store/min-ios-15-2027/">iOS and iPadOS uploads must target iOS 15 or later from April 2027</a>, <time datetime="2027-04" title="Known to the month; the exact day is not announced">2027-04</time> <span class="muted precision">(month)</span></dd>
+            <dd><a href="/deadlines/google-play/page-size-16kb-updates/">App updates must support 16 KB memory pages</a>, <time datetime="2027-02-01">2027-02-01</time></dd>
           </div>
           <div>
             <dt>Days left</dt>
-            <dd data-days="2027-04-01" data-precision="month">About 128 days</dd>
+            <dd data-days="2027-02-01" data-precision="day">65 days</dd>
           </div>
           <div>
             <dt>Listed here</dt>
-            <dd>16</dd>
+            <dd>43</dd>
           </div>
           <div>
             <dt>Announced</dt>
-            <dd>8</dd>
+            <dd>25</dd>
           </div>
           <div>
             <dt>In effect</dt>
-            <dd>8</dd>
+            <dd>18</dd>
           </div>
         </dl>
       </section>
       <section aria-labelledby="by-date">
         <h2 id="by-date">Upcoming and recent deadlines</h2>
         <div id="filters" class="filters" role="search" aria-label="Filter deadlines" data-table="deadlines" hidden>
+          <div class="field">
+            <label for="f-area">Area</label>
+            <select id="f-area" name="area">
+                <option value="">All</option>
+                <option value="base">Mobile apps</option>
+                <option value="deeper-mobile">Deeper mobile</option>
+                <option value="ci-runtimes">CI and runtimes</option>
+            </select>
+          </div>
           <div class="field">
             <label for="f-platform">Platform</label>
             <select id="f-platform" name="platform">
@@ -105,165 +114,418 @@
               <tr class="group" data-group>
                 <th scope="rowgroup" colspan="7">Upcoming</th>
               </tr>
-              <tr data-platform="app-store" data-status="announced" data-effective="2027-04-01">
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="announced" data-effective="2027-02-01">
+                <td><time datetime="2027-02-01">2027-02-01</time></td>
+                <td class="num" data-days="2027-02-01" data-precision="day">65 days</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/page-size-16kb-updates/">App updates must support 16 KB memory pages</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://developer.android.com/guide/practices/page-sizes">developer.android.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-03-31">
+                <td><time datetime="2027-03" title="Known to the month; the exact day is not announced">2027-03</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2027-03-31" data-precision="month">About 123 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/eclipse-temurin-27-eol/">Eclipse Temurin 27 reaches end of availability</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://adoptium.net/support/">adoptium.net</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-03-31">
+                <td><time datetime="2027-03-31">2027-03-31</time></td>
+                <td class="num" data-days="2027-03-31" data-precision="day">123 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/ruby-3.3-eol/">Ruby 3.3 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://www.ruby-lang.org/en/downloads/branches/">www.ruby-lang.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="app-store" data-area="base" data-status="announced" data-effective="2027-04-01">
                 <td><time datetime="2027-04" title="Known to the month; the exact day is not announced">2027-04</time> <span class="muted precision">(month)</span></td>
-                <td class="num" data-days="2027-04-01" data-precision="month">About 128 days</td>
+                <td class="num" data-days="2027-04-01" data-precision="month">About 124 days</td>
                 <td>App Store</td>
                 <th scope="row"><a href="/deadlines/app-store/min-ios-15-2027/">iOS and iPadOS uploads must target iOS 15 or later from April 2027</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://developer.apple.com/app-store/submitting/">developer.apple.com</a></td>
                 <td><time datetime="2026-11-18">2026-11-18</time></td>
               </tr>
-              <tr data-platform="app-store" data-status="announced" data-effective="2027-04-01">
+              <tr data-platform="app-store" data-area="base" data-status="announced" data-effective="2027-04-01">
                 <td><time datetime="2027-04" title="Known to the month; the exact day is not announced">2027-04</time> <span class="muted precision">(month)</span></td>
-                <td class="num" data-days="2027-04-01" data-precision="month">About 128 days</td>
+                <td class="num" data-days="2027-04-01" data-precision="month">About 124 days</td>
                 <td>App Store</td>
                 <th scope="row"><a href="/deadlines/app-store/sdk-floor-2027/">Uploads must be built with the 27 SDKs from April 2027</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://developer.apple.com/news/?id=k1mtkt1k">developer.apple.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="github-actions" data-status="announced" data-effective="2027-04-17">
+              <tr data-platform="github-actions" data-area="base" data-status="announced" data-effective="2027-04-17">
                 <td><time datetime="2027-04-17">2027-04-17</time></td>
-                <td class="num" data-days="2027-04-17" data-precision="day">144 days</td>
+                <td class="num" data-days="2027-04-17" data-precision="day">140 days</td>
                 <td>GitHub Actions</td>
                 <th scope="row"><a href="/deadlines/github-actions/ubuntu-22.04-retirement/">Ubuntu 22.04 runner images are retired on April 17, 2027</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://github.com/actions/runner-images/issues/14254">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="announced" data-effective="2027-04-30">
+              <tr data-platform="runtime" data-area="base" data-status="announced" data-effective="2027-04-30">
                 <td><time datetime="2027-04-30">2027-04-30</time></td>
-                <td class="num" data-days="2027-04-30" data-precision="day">157 days</td>
+                <td class="num" data-days="2027-04-30" data-precision="day">153 days</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-22-eol/">Node.js 22 reaches end of life</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="google-play" data-status="announced" data-effective="2027-08-31">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-04-30">
+                <td><time datetime="2027-04-30">2027-04-30</time></td>
+                <td class="num" data-days="2027-04-30" data-precision="day">153 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-22-image-eol/">Node.js 22 image reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-05-01">
+                <td><time datetime="2027-05-01">2027-05-01</time></td>
+                <td class="num" data-days="2027-05-01" data-precision="day">154 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/alpine-3.22-eol/">Alpine Linux 3.22 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://alpinelinux.org/releases/">alpinelinux.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-05-31">
+                <td><time datetime="2027-05" title="Known to the month; the exact day is not announced">2027-05</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2027-05-31" data-precision="month">About 184 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/ubuntu-22.04-eol/">Ubuntu 22.04 LTS ends standard support</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://ubuntu.com/about/release-cycle">ubuntu.com</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="github-actions" data-area="ci-runtimes" data-status="announced" data-effective="2027-08-31">
+                <td><time datetime="2027-08" title="Known to the month; the exact day is not announced">2027-08</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2027-08-31" data-precision="month">About 276 days</td>
+                <td>GitHub Actions</td>
+                <th scope="row"><a href="/deadlines/github-actions/macos-intel-retirement-2027/">macOS Intel (x86_64) runner images end</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://github.com/actions/runner-images/issues/13045">github.com</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="base" data-status="announced" data-effective="2027-08-31">
                 <td><time datetime="2027-08-31">2027-08-31</time></td>
-                <td class="num" data-days="2027-08-31" data-precision="day">280 days</td>
+                <td class="num" data-days="2027-08-31" data-precision="day">276 days</td>
                 <td>Google Play</td>
                 <th scope="row"><a href="/deadlines/google-play/billing-9-2027/">New apps and updates must use Play Billing Library 9 or later</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://developer.android.com/google/play/billing/deprecation-faq">developer.android.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="google-play" data-status="announced" data-effective="2027-08-31">
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="announced" data-effective="2027-08-31">
                 <td><time datetime="2027-08" title="Known to the month; the exact day is not announced">2027-08</time> <span class="muted precision">(month)</span></td>
-                <td class="num" data-days="2027-08-31" data-precision="month">About 280 days</td>
+                <td class="num" data-days="2027-08-31" data-precision="month">About 276 days</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/flutter-target-api-2027-updates/">New Flutter apps and updates must target API 37</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards">developer.android.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="base" data-status="announced" data-effective="2027-08-31">
+                <td><time datetime="2027-08" title="Known to the month; the exact day is not announced">2027-08</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2027-08-31" data-precision="month">About 276 days</td>
                 <td>Google Play</td>
                 <th scope="row"><a href="/deadlines/google-play/target-api-2027-updates/">New apps and updates must target API 37</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards">developer.android.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="announced" data-effective="2028-04-30">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-10-31">
+                <td><time datetime="2027-10" title="Known to the month; the exact day is not announced">2027-10</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2027-10-31" data-precision="month">About 337 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.11-eol/">Python 3.11 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2027-11-01">
+                <td><time datetime="2027-11-01">2027-11-01</time></td>
+                <td class="num" data-days="2027-11-01" data-precision="day">338 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/alpine-3.23-eol/">Alpine Linux 3.23 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://alpinelinux.org/releases/">alpinelinux.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="announced" data-effective="2028-04-30">
                 <td><time datetime="2028-04-30">2028-04-30</time></td>
-                <td class="num" data-days="2028-04-30" data-precision="day">523 days</td>
+                <td class="num" data-days="2028-04-30" data-precision="day">519 days</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-24-eol/">Node.js 24 reaches end of life</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="announced" data-effective="2029-04-30">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2028-04-30">
+                <td><time datetime="2028-04-30">2028-04-30</time></td>
+                <td class="num" data-days="2028-04-30" data-precision="day">519 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-24-image-eol/">Node.js 24 image reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2028-06-30">
+                <td><time datetime="2028-06-30">2028-06-30</time></td>
+                <td class="num" data-days="2028-06-30" data-precision="day">580 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/debian-12-eol/">Debian 12 (bookworm) reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://www.debian.org/releases/bookworm/">www.debian.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2028-10-31">
+                <td><time datetime="2028-10" title="Known to the month; the exact day is not announced">2028-10</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2028-10-31" data-precision="month">About 703 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.12-eol/">Python 3.12 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="announced" data-effective="2029-04-30">
                 <td><time datetime="2029-04-30">2029-04-30</time></td>
-                <td class="num" data-days="2029-04-30" data-precision="day">888 days</td>
+                <td class="num" data-days="2029-04-30" data-precision="day">884 days</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-26-eol/">Node.js 26 reaches end of life</a></th>
                 <td><span class="badge badge-announced">Announced</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2029-04-30">
+                <td><time datetime="2029-04-30">2029-04-30</time></td>
+                <td class="num" data-days="2029-04-30" data-precision="day">884 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-26-image-eol/">Node.js 26 image reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2029-10-31">
+                <td><time datetime="2029-10" title="Known to the month; the exact day is not announced">2029-10</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2029-10-31" data-precision="month">About 1068 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.13-eol/">Python 3.13 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2030-10-31">
+                <td><time datetime="2030-10" title="Known to the month; the exact day is not announced">2030-10</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2030-10-31" data-precision="month">About 1433 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.14-eol/">Python 3.14 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="announced" data-effective="2031-10-31">
+                <td><time datetime="2031-10" title="Known to the month; the exact day is not announced">2031-10</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2031-10-31" data-precision="month">About 1798 days</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.15-eol/">Python 3.15 reaches end of life</a></th>
+                <td><span class="badge badge-announced">Announced</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
             </tbody>
             <tbody>
               <tr class="group" data-group>
                 <th scope="rowgroup" colspan="7">Recently in effect</th>
               </tr>
-              <tr data-platform="github-actions" data-status="in-effect" data-effective="2026-11-02">
+              <tr data-platform="github-actions" data-area="base" data-status="in-effect" data-effective="2026-11-02">
                 <td><time datetime="2026-11-02">2026-11-02</time></td>
-                <td class="num" data-days="2026-11-02" data-precision="day">22 days ago</td>
+                <td class="num" data-days="2026-11-02" data-precision="day">26 days ago</td>
                 <td>GitHub Actions</td>
                 <th scope="row"><a href="/deadlines/github-actions/macos-14-retirement/">macOS 14 runner images are retired</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.com/actions/runner-images/issues/13518">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="github-actions" data-status="in-effect" data-effective="2026-10-19">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-11-01">
+                <td><time datetime="2026-11-01">2026-11-01</time></td>
+                <td class="num" data-days="2026-11-01" data-precision="day">27 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/alpine-3.21-eol/">Alpine Linux 3.21 and older reach end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://alpinelinux.org/releases/">alpinelinux.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="github-actions" data-area="base" data-status="in-effect" data-effective="2026-10-19">
                 <td><time datetime="2026-10-19">2026-10-19</time></td>
-                <td class="num" data-days="2026-10-19" data-precision="day">36 days ago</td>
+                <td class="num" data-days="2026-10-19" data-precision="day">40 days ago</td>
                 <td>GitHub Actions</td>
                 <th scope="row"><a href="/deadlines/github-actions/ubuntu-latest-26.04/">ubuntu-latest moves to Ubuntu 26.04</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.com/actions/runner-images/issues/14748">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-10-12">
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-10-12">
                 <td><time datetime="2026-10-12">2026-10-12</time></td>
-                <td class="num" data-days="2026-10-12" data-precision="day">43 days ago</td>
+                <td class="num" data-days="2026-10-12" data-precision="day">47 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.85-support/">React Native 0.85 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="github-actions" data-status="in-effect" data-effective="2026-09-23">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-10-01">
+                <td><time datetime="2026-10-01">2026-10-01</time></td>
+                <td class="num" data-days="2026-10-01" data-precision="day">58 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.10-eol/">Python 3.10 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="github-actions" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-10-01">
+                <td><time datetime="2026-10-01">2026-10-01</time></td>
+                <td class="num" data-days="2026-10-01" data-precision="day">58 days ago</td>
+                <td>GitHub Actions</td>
+                <th scope="row"><a href="/deadlines/github-actions/ndk-28-removal-2026/">Android NDK 28 is removed from the GitHub runner images</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/actions/runner-images/issues/14745">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-09-30">
+                <td><time datetime="2026-09" title="Known to the month; the exact day is not announced">2026-09</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2026-09-30" data-precision="month">About 59 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/eclipse-temurin-26-eol/">Eclipse Temurin 26 reached end of availability</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://adoptium.net/support/">adoptium.net</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="github-actions" data-area="base" data-status="in-effect" data-effective="2026-09-23">
                 <td><time datetime="2026-09-23">2026-09-23</time></td>
-                <td class="num" data-days="2026-09-23" data-precision="day">62 days ago</td>
+                <td class="num" data-days="2026-09-23" data-precision="day">66 days ago</td>
                 <td>GitHub Actions</td>
                 <th scope="row"><a href="/deadlines/github-actions/node20-actions/">Actions declaring node20 now run on Node 24</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions">github.blog</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="app-store" data-status="in-effect" data-effective="2026-09-09">
+              <tr data-platform="app-store" data-area="base" data-status="in-effect" data-effective="2026-09-09">
                 <td><time datetime="2026-09-09">2026-09-09</time></td>
-                <td class="num" data-days="2026-09-09" data-precision="day">76 days ago</td>
+                <td class="num" data-days="2026-09-09" data-precision="day">80 days ago</td>
                 <td>App Store</td>
                 <th scope="row"><a href="/deadlines/app-store/min-ios-13-2026/">iOS and iPadOS uploads must target iOS 13 or later</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://developer.apple.com/news/upcoming-requirements/">developer.apple.com</a></td>
                 <td><time datetime="2026-11-18">2026-11-18</time></td>
               </tr>
-              <tr data-platform="google-play" data-status="in-effect" data-effective="2026-08-31">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-08-31">
                 <td><time datetime="2026-08-31">2026-08-31</time></td>
-                <td class="num" data-days="2026-08-31" data-precision="day">85 days ago</td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/debian-11-eol/">Debian 11 (bullseye) and older reach end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://www.debian.org/releases/bullseye/">www.debian.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-08-31">
+                <td><time datetime="2026-08-31">2026-08-31</time></td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/xr-target-api-2026/">New Android XR apps and updates must target API 34</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-08-31">
+                <td><time datetime="2026-08-31">2026-08-31</time></td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/wear-target-api-2026/">New Wear OS apps and updates must target API 35</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="base" data-status="in-effect" data-effective="2026-08-31">
+                <td><time datetime="2026-08-31">2026-08-31</time></td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
                 <td>Google Play</td>
                 <th scope="row"><a href="/deadlines/google-play/target-api-2026-updates/">New apps and updates must target API 36</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="google-play" data-status="in-effect" data-effective="2026-08-31">
+              <tr data-platform="google-play" data-area="base" data-status="in-effect" data-effective="2026-08-31">
                 <td><time datetime="2026-08-31">2026-08-31</time></td>
-                <td class="num" data-days="2026-08-31" data-precision="day">85 days ago</td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
                 <td>Google Play</td>
                 <th scope="row"><a href="/deadlines/google-play/target-api-2026-existing/">Existing apps must target API 35 to stay available to new users</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="google-play" data-status="in-effect" data-effective="2026-08-31">
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-08-31">
                 <td><time datetime="2026-08-31">2026-08-31</time></td>
-                <td class="num" data-days="2026-08-31" data-precision="day">85 days ago</td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/flutter-target-api-2026-updates/">New Flutter apps and updates must target API 36</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-08-31">
+                <td><time datetime="2026-08-31">2026-08-31</time></td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/flutter-target-api-2026-existing/">Existing Flutter apps must target API 35 to stay available to new users</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="google-play" data-area="base" data-status="in-effect" data-effective="2026-08-31">
+                <td><time datetime="2026-08-31">2026-08-31</time></td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
                 <td>Google Play</td>
                 <th scope="row"><a href="/deadlines/google-play/billing-8-2026/">New apps and updates must use Play Billing Library 8 or later</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://developer.android.com/google/play/billing/deprecation-faq">developer.android.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-08-31">
+                <td><time datetime="2026-08-31">2026-08-31</time></td>
+                <td class="num" data-days="2026-08-31" data-precision="day">89 days ago</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/automotive-target-api-2026/">New Android Automotive OS apps and updates must target API 35</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p class="muted" data-asof>Days are counted from the dataset date, <time datetime="2026-11-24">2026-11-24</time>.</p>
-        <p><a href="/archive/">13 older deadlines, in effect for more than 90 days</a></p>
+        <p class="muted" data-asof>Days are counted from the dataset date, <time datetime="2026-11-28">2026-11-28</time>.</p>
+        <p><a href="/archive/">29 older deadlines, in effect for more than 90 days</a></p>
       </section>
       <section class="check" aria-labelledby="check">
         <h2 id="check">Check your repo</h2>
         <p>Run this in your app repository to see which of these deadlines apply to it:</p>
         <pre><code>npx warnahead</code></pre>
+        <h3 id="certain">When a finding is certain</h3>
+        <p>Google Play findings are certain only when something shows that the app is on Google Play: stores in .warnahead.json, an EAS submit profile with an android key or eas submit, fastlane supply, the Play upload action, or a README link to the app&#39;s own Google Play listing. Without it the finding shows with &quot;if you publish to Google Play&quot;, opens no issue and never fails a build.</p>
+        <p>App Store SDK floors are certain only for build paths that upload: a CI job or fastlane lane that builds for a device and sends the build to TestFlight or App Store Connect (altool, Transporter, eas submit, fastlane, an xcodebuild export with an upload destination, the TestFlight upload action), an EAS store profile, or a Codemagic or Bitrise workflow that publishes to App Store Connect. Simulator, unsigned, test and internal builds do not count, and an upload of a macOS app does not count as an iOS upload. Without a visible upload path the result is Unknown, never &quot;not affected&quot;.</p>
+        <p>Deadlines of the deeper-mobile area (Flutter apps; Wear OS, TV, Automotive and XR apps; 16 KB memory pages; Android NDK removals on GitHub runners) open issues in the GitHub Action only when the workflow names the area in its areas input.</p>
+      </section>
+      <section class="compare" aria-labelledby="compare">
+        <h2 id="compare">What warnahead adds over end-of-life scanners</h2>
+        <p>xeol scans container images, filesystems and SBOMs for end-of-life packages, with endoflife.date among its sources, and can exit with an error when it finds one. eol-check is a CLI that checks your development environment and project dependencies, and scans Dockerfiles and templates such as Terraform files for end-of-life runtimes, with data from endoflife.date. Renovate has an endoflife.date datasource, and endoflife.date offers an action that returns a list of supported versions for a product.</p>
+        <p>warnahead adds the dated policies of app stores and CI platforms: target API levels, SDK floors and runner retirements, each with its primary source, a short quote and the date it was last verified. Where a runtime end date also comes from endoflife.date, warnahead cites the owner&#39;s own release page as the primary source and endoflife.date as a second one. Its GitHub Action opens one issue per deadline that is due, comments as each threshold is crossed and closes the issue when the fix lands. In the CI and runtimes area it reads Dockerfiles, the root .gitlab-ci.yml, runtime version files such as .python-version, .ruby-version and go.mod, and the setup actions in GitHub workflows.</p>
+        <p>The tools fit together: a package scanner looks inside container images, and warnahead tracks the dates that platforms set for your repository.</p>
       </section>
       <section class="stay" aria-labelledby="stay-updated">
         <h2 id="stay-updated">Stay updated</h2>

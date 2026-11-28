@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Android NDK 26 is removed from the GitHub runner images | warnahead</title>
+    <meta name="description" content="GitHub Actions: Android NDK 26 is removed from the GitHub runner images. 2026-01-12.">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="alternate" type="application/atom+xml" title="warnahead: dataset changes" href="/feed.xml">
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/"><svg class="brand-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#1e293b"/><path d="M32 10.24 L56.32 52.48 L7.68 52.48 Z" fill="#e0a526"/><rect x="29.76" y="24.32" width="4.48" height="15.36" fill="#1e293b"/><rect x="29.76" y="42.88" width="4.48" height="4.48" fill="#1e293b"/></svg><span class="wordmark">warnahead</span></a>
+      <nav aria-label="Site">
+        <ul>
+          <li><a href="/">Deadlines</a></li>
+          <li><a href="/archive/">Older deadlines</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="content">
+      <nav aria-label="Breadcrumb"><a href="/">All deadlines</a></nav>
+      <h1>Android NDK 26 is removed from the GitHub runner images</h1>
+      <dl>
+        <dt>When</dt>
+        <dd><time datetime="2026-01-12">2026-01-12</time></dd>
+        <dt>Status</dt>
+        <dd><span class="badge badge-in-effect">In effect</span></dd>
+        <dt>Platform</dt>
+        <dd>GitHub Actions</dd>
+        <dt>Who</dt>
+        <dd>Android apps that pin NDK 26.3.11579264 and are built on a GitHub-hosted image without it (the removal started on 2026-01-12 and took about 3 days). Gradle can install it during the build when its license is accepted; otherwise the build can fail.</dd>
+        <dt>What happens</dt>
+        <dd>Warning only. Android NDK 26 will be removed from all supported images.</dd>
+      </dl>
+      <section aria-labelledby="fix">
+        <h2 id="fix">How to fix</h2>
+        <h3 id="fix-bare">Bare React Native</h3>
+        <p>For a React Native app that keeps its android and ios folders in the repository, Expo modules or not. Native changes go into those folders.</p>
+        <ul>
+          <li><strong>Gradle (native Android):</strong> Install the NDK in the workflow before the build (sdkmanager --install &quot;ndk;26.3.11579264&quot;), or set ndkVersion to a version on the image.</li>
+        </ul>
+        <h3 id="fix-native">Native Android and iOS</h3>
+        <p>For an app built with Gradle or Xcode alone.</p>
+        <ul>
+          <li><strong>Gradle (native Android):</strong> Install the NDK in the workflow before the build (sdkmanager --install &quot;ndk;26.3.11579264&quot;), or set ndkVersion to a version on the image.</li>
+        </ul>
+      </section>
+      <section aria-labelledby="sources">
+        <h2 id="sources">Sources</h2>
+        <ol>
+          <li>
+            <p><a href="https://github.com/actions/runner-images/issues/13467">https://github.com/actions/runner-images/issues/13467</a> (primary source, retrieved 2026-11-24)</p>
+            <blockquote cite="https://github.com/actions/runner-images/issues/13467"><p>Android NDK 26 will be removed from all supported images.</p></blockquote>
+          </li>
+          <li>
+            <p><a href="https://github.com/actions/runner-images/issues/13467">https://github.com/actions/runner-images/issues/13467</a> (primary source, retrieved 2026-11-24)</p>
+            <blockquote cite="https://github.com/actions/runner-images/issues/13467"><p>Image deployment will start on Monday January 12th, 2026 and will take about 3 days.</p></blockquote>
+          </li>
+          <li>
+            <p><a href="https://github.com/actions/runner-images/issues/13467">https://github.com/actions/runner-images/issues/13467</a> (primary source, retrieved 2026-11-24)</p>
+            <blockquote cite="https://github.com/actions/runner-images/issues/13467"><p>Projects that depend on Android NDK 26 will stop working.</p></blockquote>
+          </li>
+          <li>
+            <p><a href="https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md">https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md</a> (primary source, retrieved 2026-11-24)</p>
+            <blockquote cite="https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md"><p>26.3.11579264 27.3.13750724 (default) 28.2.13676358 29.0.14206865</p></blockquote>
+          </li>
+          <li>
+            <p><a href="https://developer.android.com/studio/projects/install-ndk">https://developer.android.com/studio/projects/install-ndk</a> (secondary source, retrieved 2026-11-24)</p>
+            <blockquote cite="https://developer.android.com/studio/projects/install-ndk"><p>Android Gradle Plugin 4.2.0+ can automatically install the required NDK and CMake the first time you build your project if their licenses have been accepted in advance.</p></blockquote>
+          </li>
+        </ol>
+      </section>
+      <section aria-labelledby="verification">
+        <h2 id="verification">Verification</h2>
+        <dl>
+          <dt>Last verified</dt>
+          <dd><time datetime="2026-11-24">2026-11-24</time></dd>
+          <dt>Next check</dt>
+          <dd><time datetime="2026-12-01">2026-12-01</time></dd>
+        </dl>
+      </section>
+      <section aria-labelledby="history">
+        <h2 id="history">History</h2>
+        <ul>
+          <li><time datetime="2026-11-24">2026-11-24</time>: created</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p><a href="/">warnahead</a> by <a href="https://github.com/guptaaman678">Aman Gupta</a>. Not affiliated with or endorsed by Google, Apple, Expo or GitHub.</p>
+      <p>A clean result means nothing warnahead can detect, not that nothing is due. Check the sources before you rely on a date.</p>
+      <p>Page views are counted on the server, without cookies or personal data.</p>
+      <ul class="links">
+        <li><a href="https://github.com/warnahead/action/blob/main/LICENSE.md">EULA</a></li>
+        <li><a href="https://github.com/warnahead/action/blob/main/DATA-TERMS.md">Data terms</a></li>
+        <li><a href="/data/v1/deadlines.json">Dataset (JSON)</a></li>
+        <li><a href="/feed.xml">Changes (Atom feed)</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

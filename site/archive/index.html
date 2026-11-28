@@ -26,15 +26,26 @@
     <main id="content">
       <h1>Older deadlines</h1>
       <p>Deadlines that took effect more than 90 days before the dataset date. Their pages and calendar events stay as they were.</p>
-      <p>Last verified: <time datetime="2026-11-24">2026-11-24</time></p>
+      <p>Last verified: <time datetime="2026-11-28">2026-11-28</time></p>
       <section aria-labelledby="by-date">
         <h2 id="by-date">Older deadlines</h2>
         <div id="filters" class="filters" role="search" aria-label="Filter deadlines" data-table="deadlines" hidden>
           <div class="field">
+            <label for="f-area">Area</label>
+            <select id="f-area" name="area">
+                <option value="">All</option>
+                <option value="base">Mobile apps</option>
+                <option value="deeper-mobile">Deeper mobile</option>
+                <option value="ci-runtimes">CI and runtimes</option>
+            </select>
+          </div>
+          <div class="field">
             <label for="f-platform">Platform</label>
             <select id="f-platform" name="platform">
                 <option value="">All</option>
+                <option value="google-play">Google Play</option>
                 <option value="app-store">App Store</option>
+                <option value="github-actions">GitHub Actions</option>
                 <option value="runtime">Runtimes</option>
             </select>
           </div>
@@ -74,127 +85,271 @@
               </tr>
             </thead>
             <tbody>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-04-30">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-02-11">
+                <td><time datetime="2025-02-11">2025-02-11</time></td>
+                <td class="num" data-days="2025-02-11" data-precision="day">655 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/go-1.22-eol/">Go 1.22 reached end of support</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://go.dev/doc/devel/release">go.dev</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-03-26">
+                <td><time datetime="2025-03-26">2025-03-26</time></td>
+                <td class="num" data-days="2025-03-26" data-precision="day">612 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/ruby-3.1-eol/">Ruby 3.1 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://www.ruby-lang.org/en/downloads/branches/">www.ruby-lang.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-03-31">
+                <td><time datetime="2025-03" title="Known to the month; the exact day is not announced">2025-03</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2025-03-31" data-precision="month">About 607 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/eclipse-temurin-23-eol/">Eclipse Temurin 23 reached end of availability</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://adoptium.net/support/">adoptium.net</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2025-04-30">
                 <td><time datetime="2025-04-30">2025-04-30</time></td>
-                <td class="num" data-days="2025-04-30" data-precision="day">573 days ago</td>
+                <td class="num" data-days="2025-04-30" data-precision="day">577 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-18-eol/">Node.js 18 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-06-01">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-04-30">
+                <td><time datetime="2025-04-30">2025-04-30</time></td>
+                <td class="num" data-days="2025-04-30" data-precision="day">577 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-18-image-eol/">Node.js 18 image reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-05-31">
+                <td><time datetime="2025-05" title="Known to the month; the exact day is not announced">2025-05</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2025-05-31" data-precision="month">About 546 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/ubuntu-20.04-eol/">Ubuntu 20.04 LTS and older end standard support</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://ubuntu.com/about/release-cycle">ubuntu.com</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2025-06-01">
                 <td><time datetime="2025-06-01">2025-06-01</time></td>
-                <td class="num" data-days="2025-06-01" data-precision="day">541 days ago</td>
+                <td class="num" data-days="2025-06-01" data-precision="day">545 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-23-eol/">Node.js 23 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-06-12">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-06-01">
+                <td><time datetime="2025-06-01">2025-06-01</time></td>
+                <td class="num" data-days="2025-06-01" data-precision="day">545 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-23-image-eol/">Node.js 23 image reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2025-06-12">
                 <td><time datetime="2025-06-12">2025-06-12</time></td>
-                <td class="num" data-days="2025-06-12" data-precision="day">530 days ago</td>
+                <td class="num" data-days="2025-06-12" data-precision="day">534 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.77-support/">React Native 0.77 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-08-12">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-08-12">
                 <td><time datetime="2025-08-12">2025-08-12</time></td>
-                <td class="num" data-days="2025-08-12" data-precision="day">469 days ago</td>
+                <td class="num" data-days="2025-08-12" data-precision="day">473 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/go-1.23-eol/">Go 1.23 reached end of support</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://go.dev/doc/devel/release">go.dev</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2025-08-12">
+                <td><time datetime="2025-08-12">2025-08-12</time></td>
+                <td class="num" data-days="2025-08-12" data-precision="day">473 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.78-support/">React Native 0.78 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-10-08">
+              <tr data-platform="google-play" data-area="deeper-mobile" data-status="in-effect" data-effective="2025-08-31">
+                <td><time datetime="2025-08-31">2025-08-31</time></td>
+                <td class="num" data-days="2025-08-31" data-precision="day">454 days ago</td>
+                <td>Google Play</td>
+                <th scope="row"><a href="/deadlines/google-play/tv-target-api-2026/">New Android TV apps and updates must target API 34</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://support.google.com/googleplay/android-developer/answer/11926878">support.google.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-09-30">
+                <td><time datetime="2025-09" title="Known to the month; the exact day is not announced">2025-09</time> <span class="muted precision">(month)</span></td>
+                <td class="num" data-days="2025-09-30" data-precision="month">About 424 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/eclipse-temurin-24-eol/">Eclipse Temurin 24 reached end of availability</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://adoptium.net/support/">adoptium.net</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2025-10-08">
                 <td><time datetime="2025-10-08">2025-10-08</time></td>
-                <td class="num" data-days="2025-10-08" data-precision="day">412 days ago</td>
+                <td class="num" data-days="2025-10-08" data-precision="day">416 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.79-support/">React Native 0.79 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2025-12-10">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2025-10-31">
+                <td><time datetime="2025-10-31">2025-10-31</time></td>
+                <td class="num" data-days="2025-10-31" data-precision="day">393 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/python-3.9-eol/">Python 3.9 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://devguide.python.org/versions/">devguide.python.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2025-12-10">
                 <td><time datetime="2025-12-10">2025-12-10</time></td>
-                <td class="num" data-days="2025-12-10" data-precision="day">349 days ago</td>
+                <td class="num" data-days="2025-12-10" data-precision="day">353 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.80-support/">React Native 0.80 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-02-11">
+              <tr data-platform="github-actions" data-area="deeper-mobile" data-status="in-effect" data-effective="2026-01-12">
+                <td><time datetime="2026-01-12">2026-01-12</time></td>
+                <td class="num" data-days="2026-01-12" data-precision="day">320 days ago</td>
+                <td>GitHub Actions</td>
+                <th scope="row"><a href="/deadlines/github-actions/ndk-26-removal-2026/">Android NDK 26 is removed from the GitHub runner images</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/actions/runner-images/issues/13467">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-02-10">
+                <td><time datetime="2026-02-10">2026-02-10</time></td>
+                <td class="num" data-days="2026-02-10" data-precision="day">291 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/go-1.24-eol/">Go 1.24 reached end of support</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://go.dev/doc/devel/release">go.dev</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-02-11">
                 <td><time datetime="2026-02-11">2026-02-11</time></td>
-                <td class="num" data-days="2026-02-11" data-precision="day">286 days ago</td>
+                <td class="num" data-days="2026-02-11" data-precision="day">290 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.81-support/">React Native 0.81 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-04-07">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-04-01">
+                <td><time datetime="2026-04-01">2026-04-01</time></td>
+                <td class="num" data-days="2026-04-01" data-precision="day">241 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/ruby-3.2-eol/">Ruby 3.2 reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://www.ruby-lang.org/en/downloads/branches/">www.ruby-lang.org</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-04-07">
                 <td><time datetime="2026-04-07">2026-04-07</time></td>
-                <td class="num" data-days="2026-04-07" data-precision="day">231 days ago</td>
+                <td class="num" data-days="2026-04-07" data-precision="day">235 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.82-support/">React Native 0.82 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="app-store" data-status="in-effect" data-effective="2026-04-28">
+              <tr data-platform="app-store" data-area="base" data-status="in-effect" data-effective="2026-04-28">
                 <td><time datetime="2026-04-28">2026-04-28</time></td>
-                <td class="num" data-days="2026-04-28" data-precision="day">210 days ago</td>
+                <td class="num" data-days="2026-04-28" data-precision="day">214 days ago</td>
                 <td>App Store</td>
                 <th scope="row"><a href="/deadlines/app-store/sdk-floor-2026/">Uploads must be built with the 26 SDKs</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://developer.apple.com/news/?id=ueeok6yw">developer.apple.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-04-30">
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-04-30">
                 <td><time datetime="2026-04-30">2026-04-30</time></td>
-                <td class="num" data-days="2026-04-30" data-precision="day">208 days ago</td>
+                <td class="num" data-days="2026-04-30" data-precision="day">212 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-20-eol/">Node.js 20 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-06-01">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-04-30">
+                <td><time datetime="2026-04-30">2026-04-30</time></td>
+                <td class="num" data-days="2026-04-30" data-precision="day">212 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-20-image-eol/">Node.js 20 image reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-06-01">
                 <td><time datetime="2026-06-01">2026-06-01</time></td>
-                <td class="num" data-days="2026-06-01" data-precision="day">176 days ago</td>
+                <td class="num" data-days="2026-06-01" data-precision="day">180 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/nodejs-25-eol/">Node.js 25 reached end of life</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-06-09">
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-06-01">
+                <td><time datetime="2026-06-01">2026-06-01</time></td>
+                <td class="num" data-days="2026-06-01" data-precision="day">180 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/nodejs-25-image-eol/">Node.js 25 image reached end of life</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://github.com/nodejs/Release/blob/main/README.md">github.com</a></td>
+                <td><time datetime="2026-11-24">2026-11-24</time></td>
+              </tr>
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-06-09">
                 <td><time datetime="2026-06-09">2026-06-09</time></td>
-                <td class="num" data-days="2026-06-09" data-precision="day">168 days ago</td>
+                <td class="num" data-days="2026-06-09" data-precision="day">172 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.83-support/">React Native 0.83 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
-              <tr data-platform="runtime" data-status="in-effect" data-effective="2026-08-11">
+              <tr data-platform="runtime" data-area="base" data-status="in-effect" data-effective="2026-08-11">
                 <td><time datetime="2026-08-11">2026-08-11</time></td>
-                <td class="num" data-days="2026-08-11" data-precision="day">105 days ago</td>
+                <td class="num" data-days="2026-08-11" data-precision="day">109 days ago</td>
                 <td>Runtimes</td>
                 <th scope="row"><a href="/deadlines/runtime/react-native-0.84-support/">React Native 0.84 is unsupported</a></th>
                 <td><span class="badge badge-in-effect">In effect</span></td>
                 <td><a href="https://reactnative.dev/docs/releases">reactnative.dev</a></td>
                 <td><time datetime="2026-11-24">2026-11-24</time></td>
               </tr>
+              <tr data-platform="runtime" data-area="ci-runtimes" data-status="in-effect" data-effective="2026-08-19">
+                <td><time datetime="2026-08-19">2026-08-19</time></td>
+                <td class="num" data-days="2026-08-19" data-precision="day">101 days ago</td>
+                <td>Runtimes</td>
+                <th scope="row"><a href="/deadlines/runtime/go-1.25-eol/">Go 1.25 reached end of support</a></th>
+                <td><span class="badge badge-in-effect">In effect</span></td>
+                <td><a href="https://go.dev/doc/devel/release">go.dev</a></td>
+                <td><time datetime="2026-11-28">2026-11-28</time></td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p class="muted" data-asof>Days are counted from the dataset date, <time datetime="2026-11-24">2026-11-24</time>.</p>
+        <p class="muted" data-asof>Days are counted from the dataset date, <time datetime="2026-11-28">2026-11-28</time>.</p>
       </section>
     </main>
     <footer>

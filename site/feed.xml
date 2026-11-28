@@ -3,13 +3,314 @@
   <id>https://warnahead.pages.dev/feed.xml</id>
   <title type="text">warnahead: dataset changes</title>
   <subtitle type="text">New deadlines, moved dates and status changes in the warnahead dataset, one entry per change.</subtitle>
-  <updated>2026-11-24T00:00:00Z</updated>
+  <updated>2026-11-28T00:00:00Z</updated>
   <link rel="self" type="application/atom+xml" href="https://warnahead.pages.dev/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/"/>
   <author>
     <name>Aman Gupta</name>
     <uri>https://github.com/guptaaman678</uri>
   </author>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/github-actions/macos-intel-retirement-2027/added</id>
+    <title type="text">New deadline: macOS Intel (x86_64) runner images end</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/github-actions/macos-intel-retirement-2027/"/>
+    <content type="text">Added with the date Aug 2027, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/github-actions/ndk-26-removal-2026/added</id>
+    <title type="text">New deadline: Android NDK 26 is removed from the GitHub runner images</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/github-actions/ndk-26-removal-2026/"/>
+    <content type="text">Added with the date 2026-01-12, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/github-actions/ndk-28-removal-2026/added</id>
+    <title type="text">New deadline: Android NDK 28 is removed from the GitHub runner images</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/github-actions/ndk-28-removal-2026/"/>
+    <content type="text">Added with the date 2026-10-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/automotive-target-api-2026/added</id>
+    <title type="text">New deadline: New Android Automotive OS apps and updates must target API 35</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/automotive-target-api-2026/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/flutter-target-api-2026-existing/added</id>
+    <title type="text">New deadline: Existing Flutter apps must target API 35 to stay available to new users</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-2026-existing/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/flutter-target-api-2026-updates/added</id>
+    <title type="text">New deadline: New Flutter apps and updates must target API 36</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-2026-updates/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/flutter-target-api-2027-updates/added</id>
+    <title type="text">New deadline: New Flutter apps and updates must target API 37</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-2027-updates/"/>
+    <content type="text">Added with the date Aug 2027, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/page-size-16kb-updates/added</id>
+    <title type="text">New deadline: App updates must support 16 KB memory pages</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/page-size-16kb-updates/"/>
+    <content type="text">Added with the date 2027-02-01, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/tv-target-api-2026/added</id>
+    <title type="text">New deadline: New Android TV apps and updates must target API 34</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/tv-target-api-2026/"/>
+    <content type="text">Added with the date 2025-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/wear-target-api-2026/added</id>
+    <title type="text">New deadline: New Wear OS apps and updates must target API 35</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/wear-target-api-2026/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/google-play/xr-target-api-2026/added</id>
+    <title type="text">New deadline: New Android XR apps and updates must target API 34</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/google-play/xr-target-api-2026/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/alpine-3.21-eol/added</id>
+    <title type="text">New deadline: Alpine Linux 3.21 and older reach end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/alpine-3.21-eol/"/>
+    <content type="text">Added with the date 2026-11-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/alpine-3.22-eol/added</id>
+    <title type="text">New deadline: Alpine Linux 3.22 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/alpine-3.22-eol/"/>
+    <content type="text">Added with the date 2027-05-01, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/alpine-3.23-eol/added</id>
+    <title type="text">New deadline: Alpine Linux 3.23 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/alpine-3.23-eol/"/>
+    <content type="text">Added with the date 2027-11-01, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/debian-11-eol/added</id>
+    <title type="text">New deadline: Debian 11 (bullseye) and older reach end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/debian-11-eol/"/>
+    <content type="text">Added with the date 2026-08-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/debian-12-eol/added</id>
+    <title type="text">New deadline: Debian 12 (bookworm) reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/debian-12-eol/"/>
+    <content type="text">Added with the date 2028-06-30, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/eclipse-temurin-23-eol/added</id>
+    <title type="text">New deadline: Eclipse Temurin 23 reached end of availability</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-23-eol/"/>
+    <content type="text">Added with the date Mar 2025, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/eclipse-temurin-24-eol/added</id>
+    <title type="text">New deadline: Eclipse Temurin 24 reached end of availability</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-24-eol/"/>
+    <content type="text">Added with the date Sep 2025, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/eclipse-temurin-26-eol/added</id>
+    <title type="text">New deadline: Eclipse Temurin 26 reached end of availability</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-26-eol/"/>
+    <content type="text">Added with the date Sep 2026, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/eclipse-temurin-27-eol/added</id>
+    <title type="text">New deadline: Eclipse Temurin 27 reaches end of availability</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-27-eol/"/>
+    <content type="text">Added with the date Mar 2027, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/go-1.22-eol/added</id>
+    <title type="text">New deadline: Go 1.22 reached end of support</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/go-1.22-eol/"/>
+    <content type="text">Added with the date 2025-02-11, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/go-1.23-eol/added</id>
+    <title type="text">New deadline: Go 1.23 reached end of support</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/go-1.23-eol/"/>
+    <content type="text">Added with the date 2025-08-12, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/go-1.24-eol/added</id>
+    <title type="text">New deadline: Go 1.24 reached end of support</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/go-1.24-eol/"/>
+    <content type="text">Added with the date 2026-02-10, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/go-1.25-eol/added</id>
+    <title type="text">New deadline: Go 1.25 reached end of support</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/go-1.25-eol/"/>
+    <content type="text">Added with the date 2026-08-19, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-18-image-eol/added</id>
+    <title type="text">New deadline: Node.js 18 image reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-18-image-eol/"/>
+    <content type="text">Added with the date 2025-04-30, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-20-image-eol/added</id>
+    <title type="text">New deadline: Node.js 20 image reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-20-image-eol/"/>
+    <content type="text">Added with the date 2026-04-30, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-22-image-eol/added</id>
+    <title type="text">New deadline: Node.js 22 image reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-22-image-eol/"/>
+    <content type="text">Added with the date 2027-04-30, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-23-image-eol/added</id>
+    <title type="text">New deadline: Node.js 23 image reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-23-image-eol/"/>
+    <content type="text">Added with the date 2025-06-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-24-image-eol/added</id>
+    <title type="text">New deadline: Node.js 24 image reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-24-image-eol/"/>
+    <content type="text">Added with the date 2028-04-30, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-25-image-eol/added</id>
+    <title type="text">New deadline: Node.js 25 image reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-25-image-eol/"/>
+    <content type="text">Added with the date 2026-06-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/nodejs-26-image-eol/added</id>
+    <title type="text">New deadline: Node.js 26 image reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/nodejs-26-image-eol/"/>
+    <content type="text">Added with the date 2029-04-30, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.10-eol/added</id>
+    <title type="text">New deadline: Python 3.10 reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.10-eol/"/>
+    <content type="text">Added with the date 2026-10-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.11-eol/added</id>
+    <title type="text">New deadline: Python 3.11 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.11-eol/"/>
+    <content type="text">Added with the date Oct 2027, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.12-eol/added</id>
+    <title type="text">New deadline: Python 3.12 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.12-eol/"/>
+    <content type="text">Added with the date Oct 2028, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.13-eol/added</id>
+    <title type="text">New deadline: Python 3.13 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.13-eol/"/>
+    <content type="text">Added with the date Oct 2029, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.14-eol/added</id>
+    <title type="text">New deadline: Python 3.14 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.14-eol/"/>
+    <content type="text">Added with the date Oct 2030, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.15-eol/added</id>
+    <title type="text">New deadline: Python 3.15 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.15-eol/"/>
+    <content type="text">Added with the date Oct 2031, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/python-3.9-eol/added</id>
+    <title type="text">New deadline: Python 3.9 reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/python-3.9-eol/"/>
+    <content type="text">Added with the date 2025-10-31, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/ruby-3.1-eol/added</id>
+    <title type="text">New deadline: Ruby 3.1 reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/ruby-3.1-eol/"/>
+    <content type="text">Added with the date 2025-03-26, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/ruby-3.2-eol/added</id>
+    <title type="text">New deadline: Ruby 3.2 reached end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/ruby-3.2-eol/"/>
+    <content type="text">Added with the date 2026-04-01, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/ruby-3.3-eol/added</id>
+    <title type="text">New deadline: Ruby 3.3 reaches end of life</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/ruby-3.3-eol/"/>
+    <content type="text">Added with the date 2027-03-31, status Announced.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/ubuntu-20.04-eol/added</id>
+    <title type="text">New deadline: Ubuntu 20.04 LTS and older end standard support</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/ubuntu-20.04-eol/"/>
+    <content type="text">Added with the date May 2025, status In effect.</content>
+  </entry>
+  <entry>
+    <id>tag:warnahead.pages.dev,2026:change/2026-11-28/runtime/ubuntu-22.04-eol/added</id>
+    <title type="text">New deadline: Ubuntu 22.04 LTS ends standard support</title>
+    <updated>2026-11-28T00:00:00Z</updated>
+    <link rel="alternate" type="text/html" href="https://warnahead.pages.dev/deadlines/runtime/ubuntu-22.04-eol/"/>
+    <content type="text">Added with the date May 2027, status Announced.</content>
+  </entry>
   <entry>
     <id>tag:warnahead.pages.dev,2026:change/2026-11-24/google-play/target-api-2027-updates/status</id>
     <title type="text">Status changed: New apps and updates must target API 37</title>
