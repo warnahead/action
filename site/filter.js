@@ -35,6 +35,7 @@
     return field ? String(field.value).trim() : '';
   }
   function apply() {
+    var area = value('area');
     var platform = value('platform');
     var status = value('status');
     var from = value('from');
@@ -44,6 +45,7 @@
     rows.forEach(function (row) {
       var date = row.getAttribute('data-effective') || '';
       var match =
+        (!area || row.getAttribute('data-area') === area) &&
         (!platform || row.getAttribute('data-platform') === platform) &&
         (!status || row.getAttribute('data-status') === status) &&
         (!from || date >= from) &&

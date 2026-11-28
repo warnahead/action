@@ -391,6 +391,266 @@
       }
     },
     {
+      "applies_to": "GitHub-hosted jobs on a macOS Intel (x64) image, in any repository (macos-15-intel, macos-15-large, macos-26-intel, macos-26-large, macos-latest-large; table gha-runner-labels)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "breaks-ci",
+        "text": "The x86_64 macOS label macos-15-intel is available until August 2027, and after that date the x86_64 architecture will not be supported on GitHub Actions: no day published yet."
+      },
+      "detect": {
+        "affected": {
+          "fact": "gha.runnerImage",
+          "in": [
+            "macOS-15",
+            "macOS-26"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2027-08-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "github-actions",
+          "text": "Before August 2027, move these jobs to an Arm64 macOS label (macos-latest, macos-26 or macos-15), and check that the build and the tools it installs run on Apple silicon."
+        }
+      ],
+      "fix_effort": "a runs-on change per job, plus any x86_64-only tool the job installs",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "github-actions/macos-intel-retirement-2027",
+      "kind": "removal",
+      "platform": "github-actions",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "The new label will run on macOS 15 and will be available from now until August 2027.",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/issues/13045"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "This will be the last available x86_64 image from Actions, and after that date the x86_64 architecture will not be supported on GitHub Actions.",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/issues/13045"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "Notice of macOS x86_64 (Intel) architecture deprecation [Aug 2027]",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/opentoonz/opentoonz/issues/6132"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "ci",
+        "github-actions",
+        "macos"
+      ],
+      "timezone": "UTC",
+      "title": "macOS Intel (x86_64) runner images end",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Android apps that pin NDK 26.3.11579264 and are built on a GitHub-hosted image without it (the removal started on 2026-01-12 and took about 3 days). Gradle can install it during the build when its license is accepted; otherwise the build can fail.",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Android NDK 26 will be removed from all supported images."
+      },
+      "detect": {
+        "affected": {
+          "all": [
+            {
+              "eq": "26.3.11579264",
+              "fact": "gha.pinnedNdk"
+            },
+            {
+              "eq": false,
+              "fact": "gha.pinnedNdkInstalled"
+            }
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-01-12",
+      "extension": null,
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Install the NDK in the workflow before the build (sdkmanager --install \"ndk;26.3.11579264\"), or set ndkVersion to a version on the image."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "github-actions/ndk-26-removal-2026",
+      "kind": "removal",
+      "platform": "github-actions",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android NDK 26 will be removed from all supported images.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/13467"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Image deployment will start on Monday January 12th, 2026 and will take about 3 days.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/13467"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Projects that depend on Android NDK 26 will stop working.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/13467"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "26.3.11579264 27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "Android Gradle Plugin 4.2.0+ can automatically install the required NDK and CMake the first time you build your project if their licenses have been accepted in advance.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/studio/projects/install-ndk"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "ci",
+        "github-actions",
+        "android",
+        "native"
+      ],
+      "timezone": "UTC",
+      "title": "Android NDK 26 is removed from the GitHub runner images",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Android apps that pin NDK 28.2.13676358 and are built on a GitHub-hosted image without it (Ubuntu and Windows since October 2026; the macOS images still had it on 2026-11-24). Gradle can install it during the build when its license is accepted; otherwise the build can fail.",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Only workflows that explicitly use NDK 28 (via ndkVersion or an NDK 28 path) are affected once it's removed."
+      },
+      "detect": {
+        "affected": {
+          "all": [
+            {
+              "eq": "28.2.13676358",
+              "fact": "gha.pinnedNdk"
+            },
+            {
+              "eq": false,
+              "fact": "gha.pinnedNdkInstalled"
+            }
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-10-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Install the NDK in the workflow before the build (sdkmanager --install \"ndk;28.2.13676358\"), or set ndkVersion to a version on the image."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "github-actions/ndk-28-removal-2026",
+      "kind": "removal",
+      "platform": "github-actions",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android NDK 28 is being removed from the runner images, and NDK 30 (LTS) is being added.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/14745"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "From 2026-10-01 onward (at least two weeks after this announcement).",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/14745"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Only workflows that explicitly use NDK 28 (via ndkVersion or an NDK 28 path) are affected once it's removed.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/issues/14745"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "Android Gradle Plugin 4.2.0+ can automatically install the required NDK and CMake the first time you build your project if their licenses have been accepted in advance.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/studio/projects/install-ndk"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "ci",
+        "github-actions",
+        "android",
+        "native"
+      ],
+      "timezone": "UTC",
+      "title": "Android NDK 28 is removed from the GitHub runner images",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "JavaScript actions whose action.yml declares runs.using node20, on GitHub-hosted runners",
       "consequence": {
         "mode": "warning-only",
@@ -579,6 +839,92 @@
       }
     },
     {
+      "applies_to": "Android Automotive OS apps submitted to Google Play whose manifest requires the Android Automotive OS feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Android Automotive OS apps and app updates must target Android 15 (API level 35) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 35
+        },
+        "requires": [
+          "android.app",
+          "automotive.app"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 35 or higher in the Android Automotive OS app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/automotive-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new Android Automotive OS app, you must target Android 15 (API level 35) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When are Android Automotive OS app submissions required to target this level? New apps App updates Android 15 (API level 35) or higher August 31, 2026 August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "To be distributed to cars through Google Play, apps built for Android Automotive OS must include a",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/training/cars/platforms/automotive-os"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "android-automotive"
+      ],
+      "timezone": "UTC",
+      "title": "New Android Automotive OS apps and updates must target API 35",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Android apps on Google Play that use the Play Billing Library",
       "consequence": {
         "mode": "blocks-release",
@@ -730,6 +1076,342 @@
       }
     },
     {
+      "applies_to": "Flutter phone and tablet apps already published on Google Play whose Gradle script takes targetSdk from flutter.targetSdkVersion",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "hides-app",
+        "text": "Existing apps must target Android 15 (API level 35) or higher to remain available to new users on devices running Android OS higher than your app's target API level."
+      },
+      "detect": {
+        "affected": {
+          "fact": "flutter.targetSdk",
+          "lt": 35
+        },
+        "requires": [
+          "android.app",
+          "flutter.setsTargetSdk",
+          "android.handheld"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Upgrade to Flutter 3.27 or later (3.35 or later to publish updates; table flutter-sdk-defaults), or set targetSdk = 35 or higher in the app module (36 to publish updates)."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "google-play/flutter-target-api-2026-existing",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Existing apps must target Android 15 (API level 35) or higher to remain available to new users on devices running Android OS higher than your app's target API level.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "existing apps (across mobile and Android Auto) must target Android 15 (API level 35) or higher by August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "targetSdk = flutter.targetSdkVersion",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/templates/app/android-kotlin.tmpl/app/build.gradle.kts.tmpl"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "flutter"
+      ],
+      "timezone": "UTC",
+      "title": "Existing Flutter apps must target API 35 to stay available to new users",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Flutter phone and tablet apps submitted to Google Play whose Gradle script takes targetSdk from flutter.targetSdkVersion",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "flutter.targetSdk",
+          "lt": 36
+        },
+        "requires": [
+          "android.app",
+          "flutter.setsTargetSdk",
+          "android.handheld"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Upgrade to Flutter 3.35 or later (table flutter-sdk-defaults), or set targetSdk = 36 in the app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/flutter-target-api-2026-updates",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "targetSdk = flutter.targetSdkVersion",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/templates/app/android-kotlin.tmpl/app/build.gradle.kts.tmpl"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "flutter"
+      ],
+      "timezone": "UTC",
+      "title": "New Flutter apps and updates must target API 36",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Flutter phone and tablet apps submitted to Google Play whose Gradle script takes targetSdk from flutter.targetSdkVersion",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New and updated apps are required to target API level 37 (Android 17): August 2027, no day published yet."
+      },
+      "detect": {
+        "affected": {
+          "fact": "flutter.targetSdk",
+          "lt": 37
+        },
+        "requires": [
+          "android.app",
+          "flutter.setsTargetSdk",
+          "android.handheld"
+        ]
+      },
+      "effective": "2027-08-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Before August 2027, upgrade to a Flutter release whose default targetSdk is 37 (table flutter-sdk-defaults; none on 2026-11-24), or set targetSdk = 37 in the app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/flutter-target-api-2027-updates",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "August 2027 New and updated apps are required to target API level 37 (Android 17).",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "targetSdk = flutter.targetSdkVersion",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/templates/app/android-kotlin.tmpl/app/build.gradle.kts.tmpl"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "flutter"
+      ],
+      "timezone": "UTC",
+      "title": "New Flutter apps and updates must target API 37",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Android phone and tablet apps submitted to Google Play that target API 35 or higher",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "App updates that target Android 15 (API level 35) or higher and do not support 16 KB memory page sizes on 64-bit devices can't be released on Google Play."
+      },
+      "detect": {
+        "affected": {
+          "all": [
+            {
+              "fact": "pageSize.targetSdk",
+              "gte": 35
+            },
+            {
+              "eq": false,
+              "fact": "pageSize.aligned"
+            }
+          ]
+        },
+        "requires": [
+          "android.app",
+          "android.handheld"
+        ]
+      },
+      "effective": "2027-02-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "react-native",
+          "text": "Upgrade to React Native 0.77 or higher (for Expo, an SDK that has it) and update libraries with native code.",
+          "when": {
+            "fact": "rn.version",
+            "semverLt": "0.77.0"
+          }
+        },
+        {
+          "context": "expo-cng",
+          "text": "Update the dependencies with native code to versions aligned to 16 KB, then check the release build with warnahead --check-binaries."
+        },
+        {
+          "context": "gradle",
+          "text": "Build native code with NDK 28 or higher and Android Gradle plugin 8.5.1 or higher, update prebuilt libraries, then check the release build with warnahead --check-binaries."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/page-size-16kb-updates",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Starting February 1, 2027, if your app updates don't support 16 KB memory page sizes, you won't be able to release these updates.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "apps targeting Android 15 (API level 35) and higher must support 16 KB memory page sizes on 64-bit devices on Google Play",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "NDK version r28 and higher compile 16 KB-aligned by default.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "you need to upgrade to Android Gradle Plugin (AGP) version 8.5.1 or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/guide/practices/page-sizes"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "With the 0.77 release, React Native is ready to fully support 16 KB page size",
+          "retrieved": "2026-11-24",
+          "url": "https://reactnative.dev/blog/2025/01/21/version-0.77"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "native"
+      ],
+      "timezone": "UTC",
+      "title": "App updates must support 16 KB memory pages",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Android phone and tablet apps already published on Google Play (Wear OS needs API 34, Android TV API 33, Android XR API 34, Android Automotive OS API 32)",
       "consequence": {
         "mode": "hides-app",
@@ -809,7 +1491,7 @@
       }
     },
     {
-      "applies_to": "Android phone and tablet apps published on Google Play (Wear OS and Android Automotive OS need API 35, Android TV and Android XR need API 34)",
+      "applies_to": "Android phone and tablet apps submitted to Google Play (Wear OS and Android Automotive OS need API 35, Android TV and Android XR need API 34)",
       "consequence": {
         "mode": "blocks-release",
         "text": "New apps and app updates must target Android 16 (API level 36) or higher to be submitted to Google Play."
@@ -850,6 +1532,10 @@
         {
           "change": "created",
           "date": "2026-11-11"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
         }
       ],
       "id": "google-play/target-api-2026-updates",
@@ -888,7 +1574,7 @@
       }
     },
     {
-      "applies_to": "Android phone and tablet apps published on Google Play",
+      "applies_to": "Android phone and tablet apps submitted to Google Play",
       "consequence": {
         "mode": "blocks-release",
         "text": "New and updated apps are required to target API level 37 (Android 17): August 2027, no day published yet."
@@ -930,6 +1616,10 @@
         {
           "change": "expected to announced: Google named August 2027 for API 37 in November 2026; date and floor unchanged, no day published",
           "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
         }
       ],
       "id": "google-play/target-api-2027-updates",
@@ -958,6 +1648,1118 @@
         "by": "guptaaman678",
         "last_verified": "2026-11-24",
         "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Android TV apps submitted to Google Play whose manifest requires the Android TV feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Android TV apps and app updates must target Android 14 (API level 34) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 34
+        },
+        "requires": [
+          "android.app",
+          "tv.app"
+        ]
+      },
+      "effective": "2025-08-31",
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 34 or higher in the Android TV app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/tv-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new TV app, you must target Android 14 (API level 34) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android 14 (API level 34) or higher August 31, 2025 August 31, 2025",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "If you set the required attribute value to true, Google Play will only make your app available on Android TV OS.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/training/tv/get-started/create"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "android-tv"
+      ],
+      "timezone": "UTC",
+      "title": "New Android TV apps and updates must target API 34",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Wear OS apps submitted to Google Play whose manifest requires the Wear OS feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Wear OS apps and app updates must target Android 15 (API level 35) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 35
+        },
+        "requires": [
+          "android.app",
+          "wear.app"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 35 or higher in the Wear OS app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/wear-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new Wear app, you must target Android 15 (API level 35) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android 15(API level 35) or higher August 31, 2026 August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "For the Play Store to recognize your app as a Wear OS app, you must declare a specific",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/training/wearables/packaging"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "wear-os"
+      ],
+      "timezone": "UTC",
+      "title": "New Wear OS apps and updates must target API 35",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Android XR apps submitted to Google Play whose manifest requires the Android XR feature",
+      "area": "deeper-mobile",
+      "consequence": {
+        "mode": "blocks-release",
+        "text": "New Android XR apps and app updates must target Android 14 (API level 34) or higher to be submitted to Google Play."
+      },
+      "detect": {
+        "affected": {
+          "fact": "formFactor.targetSdk",
+          "lt": 34
+        },
+        "requires": [
+          "android.app",
+          "xr.app"
+        ]
+      },
+      "effective": "2026-08-31",
+      "extension": {
+        "how": "On request in Play Console",
+        "until": "2026-11-01"
+      },
+      "fix": [
+        {
+          "context": "gradle",
+          "text": "Set targetSdk = 34 or higher in the Android XR app module."
+        }
+      ],
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "who it applies to says submitted to Google Play on any track",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "google-play/xr-target-api-2026",
+      "kind": "policy-floor",
+      "platform": "google-play",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "When you publish a new Android XR app, you must target Android 14 (API level 34) or higher.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Android 14 (API level 34) or higher August 31, 2026 August 31, 2026",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "You will be able to request an extension to November 1, 2026 if you need more time to update your app.",
+          "retrieved": "2026-11-24",
+          "url": "https://support.google.com/googleplay/android-developer/answer/11926878"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Apps that are built using the Jetpack XR SDK must include this feature in the app manifest.",
+          "retrieved": "2026-11-24",
+          "url": "https://developer.android.com/develop/xr/jetpack-xr-sdk/build-immersive"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "android",
+        "android-xr"
+      ],
+      "timezone": "UTC",
+      "title": "New Android XR apps and updates must target API 34",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Alpine 3.21 or older (alpine:3.21, node:20-alpine3.19; table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Alpine Linux 3.21 support ended on 2026-11-01, and the older branches ended before it: the image gets no more security updates."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "alpine-3.21",
+            "alpine-3.20",
+            "alpine-3.19",
+            "alpine-3.18",
+            "alpine-3.17",
+            "alpine-3.16",
+            "alpine-3.15",
+            "alpine-3.14",
+            "alpine-3.13",
+            "alpine-3.12",
+            "alpine-3.11",
+            "alpine-3.10",
+            "alpine-3.9",
+            "alpine-3.8",
+            "alpine-3.7",
+            "alpine-3.6",
+            "alpine-3.5",
+            "alpine-3.4",
+            "alpine-3.3",
+            "alpine-3.2",
+            "alpine-3.1",
+            "alpine-3.0"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-11-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to a tag on a supported Alpine branch (3.22 or newer), and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between branches",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/alpine-3.21-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.21.0 &bull; 2026-11-01 main",
+          "retrieved": "2026-11-28",
+          "url": "https://alpinelinux.org/releases/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.19.0 &bull; 2025-11-01 on request",
+          "retrieved": "2026-11-28",
+          "url": "https://alpinelinux.org/releases/"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "alpine"
+      ],
+      "timezone": "UTC",
+      "title": "Alpine Linux 3.21 and older reach end of life",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Alpine 3.22 (alpine:3.22, python:3.12-alpine3.22; table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Alpine Linux 3.22 support ends on 2027-05-01: after it, the image gets no more security updates."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "alpine-3.22"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2027-05-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Before May 2027, move the image to a tag on a newer Alpine branch, and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between branches",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/alpine-3.22-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.22.0 &bull; 2027-05-01 main",
+          "retrieved": "2026-11-28",
+          "url": "https://alpinelinux.org/releases/"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "alpine"
+      ],
+      "timezone": "UTC",
+      "title": "Alpine Linux 3.22 reaches end of life",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Alpine 3.23 (alpine:3.23, golang:1.26-alpine3.23; table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Alpine Linux 3.23 support ends on 2027-11-01: after it, the image gets no more security updates."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "alpine-3.23"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2027-11-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Before November 2027, move the image to a tag on a newer Alpine branch, and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between branches",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/alpine-3.23-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.23.0 &bull; 2027-11-01 main",
+          "retrieved": "2026-11-28",
+          "url": "https://alpinelinux.org/releases/"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "alpine"
+      ],
+      "timezone": "UTC",
+      "title": "Alpine Linux 3.23 reaches end of life",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Debian 11 (bullseye) or older (debian:11, python:3.11-slim-bullseye; tables docker-base-images and container-os-releases)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Debian 11 bullseye Long Term Support ended on 2026-08-31, and the older releases ended before it: the image gets no more security updates."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "debian-11",
+            "debian-10",
+            "debian-9"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-08-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to a tag on Debian 12 (bookworm) or 13 (trixie), and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between releases",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/debian-11-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "two years of Long Term Support (LTS), until August 31st, 2026.",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/bullseye/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 11 has been superseded by Debian 12 (bookworm).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/bullseye/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 10 has been superseded by Debian 11 (bullseye).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/buster/"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "debian"
+      ],
+      "timezone": "UTC",
+      "title": "Debian 11 (bullseye) and older reach end of life",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Debian 12 (debian:12, debian:bookworm, node:20-bookworm-slim; tables docker-base-images and container-os-releases)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Debian 12 bookworm Long Term Support ends on 2028-06-30: after it, the image gets no more security updates."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "debian-12"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2028-06-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Before June 2028, move the image to a tag on Debian 13 (trixie), and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between releases",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/debian-12-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "bookworm benefits from Long Term Support (LTS) until 30th June, 2028.",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/bookworm/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 12 has been superseded by Debian 13 (trixie).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/bookworm/"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "debian"
+      ],
+      "timezone": "UTC",
+      "title": "Debian 12 (bookworm) reaches end of life",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Java is Eclipse Temurin 23 (actions/setup-java with distribution temurin, a Gradle toolchain with vendor ADOPTIUM, a temurin .java-version, or an eclipse-temurin Docker image)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of availability since March 2025 on the Eclipse Temurin support page: no more Temurin updates for Java 23."
+      },
+      "detect": {
+        "affected": {
+          "fact": "java.temurin",
+          "semverSatisfies": "23.x"
+        },
+        "requires": []
+      },
+      "effective": "2025-03-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "java",
+          "text": "Move to Eclipse Temurin 25 (LTS) or a later LTS release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/eclipse-temurin-23-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Java 23 | Sep 2024 | Jan 2025 | jdk-23.0.2+7 | EOSL[2] | Mar 2025",
+          "retrieved": "2026-11-28",
+          "url": "https://adoptium.net/support/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "23 2024-09-17 false true 2025-03-18",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/eclipse-temurin"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "eclipse-temurin"
+      ],
+      "timezone": "UTC",
+      "title": "Eclipse Temurin 23 reached end of availability",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Java is Eclipse Temurin 24 (actions/setup-java with distribution temurin, a Gradle toolchain with vendor ADOPTIUM, a temurin .java-version, or an eclipse-temurin Docker image)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of availability since September 2025 on the Eclipse Temurin support page: no more Temurin updates for Java 24."
+      },
+      "detect": {
+        "affected": {
+          "fact": "java.temurin",
+          "semverSatisfies": "24.x"
+        },
+        "requires": []
+      },
+      "effective": "2025-09-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "java",
+          "text": "Move to Eclipse Temurin 25 (LTS) or a later LTS release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/eclipse-temurin-24-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Java 24 | Mar 2025 | Jul 2025 | jdk-24.0.2+12 | EOSL[2] | Sep 2025",
+          "retrieved": "2026-11-28",
+          "url": "https://adoptium.net/support/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "24 2025-03-20 false true 2025-09-22",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/eclipse-temurin"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "eclipse-temurin"
+      ],
+      "timezone": "UTC",
+      "title": "Eclipse Temurin 24 reached end of availability",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Java is Eclipse Temurin 26 (actions/setup-java with distribution temurin, a Gradle toolchain with vendor ADOPTIUM, a temurin .java-version, or an eclipse-temurin Docker image)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of availability since September 2026 on the Eclipse Temurin support page: no more Temurin updates for Java 26."
+      },
+      "detect": {
+        "affected": {
+          "fact": "java.temurin",
+          "semverSatisfies": "26.x"
+        },
+        "requires": []
+      },
+      "effective": "2026-09-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "java",
+          "text": "Move to the next Eclipse Temurin feature release or to a supported LTS release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/eclipse-temurin-26-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Java 26 | Mar 2026 | Aug 2026 | jdk-26.0.2.1+1 | EOSL[2] | Sep 2026",
+          "retrieved": "2026-11-28",
+          "url": "https://adoptium.net/support/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "26 2026-03-23 false true 2026-09-22",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/eclipse-temurin"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "eclipse-temurin"
+      ],
+      "timezone": "UTC",
+      "title": "Eclipse Temurin 26 reached end of availability",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Java is Eclipse Temurin 27 (actions/setup-java with distribution temurin, a Gradle toolchain with vendor ADOPTIUM, a temurin .java-version, or an eclipse-temurin Docker image)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of availability in March 2027 on the Eclipse Temurin support page: no more Temurin updates for Java 27 after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "java.temurin",
+          "semverSatisfies": "27.x"
+        },
+        "requires": []
+      },
+      "effective": "2027-03-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "java",
+          "text": "Move to the next Eclipse Temurin feature release or to a supported LTS release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/eclipse-temurin-27-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Java 27 | Sep 2026 | Nov 2026 | jdk-27.0.1.1+4 | Jan 2027 | jdk-27.0.2 | Mar 2027",
+          "retrieved": "2026-11-28",
+          "url": "https://adoptium.net/support/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "27 2026-09-22 false false 2027-03-23",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/eclipse-temurin"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "eclipse-temurin"
+      ],
+      "timezone": "UTC",
+      "title": "Eclipse Temurin 27 reaches end of availability",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Go version (go.mod go or toolchain line, actions/setup-go, or a golang Docker image) is 1.22",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Unsupported since 2025-02-11, when the second newer Go major was released: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "go.version",
+          "semverSatisfies": "1.22.x"
+        },
+        "requires": []
+      },
+      "effective": "2025-02-11",
+      "extension": null,
+      "fix": [
+        {
+          "context": "go",
+          "text": "Move to Go 1.27 or later."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/go-1.22-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "go1.24.0 (released 2025-02-11)",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Each major Go release is supported until there are two newer major releases.",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "1.22 2024-02-06 false true 2025-02-11",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/go"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "go"
+      ],
+      "timezone": "UTC",
+      "title": "Go 1.22 reached end of support",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Go version (go.mod go or toolchain line, actions/setup-go, or a golang Docker image) is 1.23",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Unsupported since 2025-08-12, when the second newer Go major was released: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "go.version",
+          "semverSatisfies": "1.23.x"
+        },
+        "requires": []
+      },
+      "effective": "2025-08-12",
+      "extension": null,
+      "fix": [
+        {
+          "context": "go",
+          "text": "Move to Go 1.27 or later."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/go-1.23-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "go1.25.0 (released 2025-08-12)",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Each major Go release is supported until there are two newer major releases.",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "1.23 2024-08-13 false true 2025-08-12",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/go"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "go"
+      ],
+      "timezone": "UTC",
+      "title": "Go 1.23 reached end of support",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Go version (go.mod go or toolchain line, actions/setup-go, or a golang Docker image) is 1.24",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Unsupported since 2026-02-10, when the second newer Go major was released: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "go.version",
+          "semverSatisfies": "1.24.x"
+        },
+        "requires": []
+      },
+      "effective": "2026-02-10",
+      "extension": null,
+      "fix": [
+        {
+          "context": "go",
+          "text": "Move to Go 1.27 or later."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/go-1.24-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "go1.26.0 (released 2026-02-10)",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Each major Go release is supported until there are two newer major releases.",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "1.24 2025-02-11 false true 2026-02-10",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/go"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "go"
+      ],
+      "timezone": "UTC",
+      "title": "Go 1.24 reached end of support",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Go version (go.mod go or toolchain line, actions/setup-go, or a golang Docker image) is 1.25",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Unsupported since 2026-08-19, when the second newer Go major was released: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "go.version",
+          "semverSatisfies": "1.25.x"
+        },
+        "requires": []
+      },
+      "effective": "2026-08-19",
+      "extension": null,
+      "fix": [
+        {
+          "context": "go",
+          "text": "Move to Go 1.27 or later."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/go-1.25-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "go1.27.0 (released 2026-08-19)",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Each major Go release is supported until there are two newer major releases.",
+          "retrieved": "2026-11-28",
+          "url": "https://go.dev/doc/devel/release"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "1.25 2025-08-12 false true 2026-08-19",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/go"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "go"
+      ],
+      "timezone": "UTC",
+      "title": "Go 1.25 reached end of support",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
       }
     },
     {
@@ -1015,6 +2817,70 @@
       ],
       "timezone": "UTC",
       "title": "Node.js 18 reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 18 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life since 2025-04-30 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-18"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2025-04-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to node:26 or a later LTS line, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-18-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "18.x | End-of-Life | Hydrogen | 2022-04-19 | 2022-10-25 | 2023-10-18 | 2025-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "18 (LTS) 2022-04-19 true 2022-10-25 true 2023-10-18 true 2025-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 18 image reached end of life",
       "verification": {
         "by": "eol-generate",
         "last_verified": "2026-11-24",
@@ -1083,6 +2949,70 @@
       }
     },
     {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 20 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life since 2026-04-30 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-20"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-04-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to node:26 or a later LTS line, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-20-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "20.x | End-of-Life | Iron | 2023-04-18 | 2023-10-24 | 2024-10-22 | 2026-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "20 (LTS) 2023-04-18 true 2023-10-24 true 2024-10-22 true 2026-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 20 image reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Projects whose Node.js version (engines, .nvmrc, .node-version, setup-node or eas.json) is 22.x",
       "consequence": {
         "mode": "warning-only",
@@ -1137,6 +3067,70 @@
       ],
       "timezone": "UTC",
       "title": "Node.js 22 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 22 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life on 2027-04-30 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-22"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2027-04-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to node:26 or a later LTS line, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-22-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "22.x | Maintenance LTS | Jod | 2024-04-24 | 2024-10-29 | 2025-10-21 | 2027-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "22 (LTS) 2024-04-24 true 2024-10-29 true 2025-10-21 false 2027-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 22 image reaches end of life",
       "verification": {
         "by": "eol-generate",
         "last_verified": "2026-11-24",
@@ -1205,6 +3199,70 @@
       }
     },
     {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 23 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life since 2025-06-01 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-23"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2025-06-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to node:26 or a later LTS line, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-23-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "23.x | End-of-Life | 2024-10-15 | - | 2025-04-01 | 2025-06-01",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "23 2024-10-16 false true 2025-04-01 true 2025-06-01",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 23 image reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Projects whose Node.js version (engines, .nvmrc, .node-version, setup-node or eas.json) is 24.x",
       "consequence": {
         "mode": "warning-only",
@@ -1259,6 +3317,70 @@
       ],
       "timezone": "UTC",
       "title": "Node.js 24 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 24 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life on 2028-04-30 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-24"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2028-04-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to node:26 or a later LTS line, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-24-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "24.x | Maintenance LTS | Krypton | 2025-05-06 | 2025-10-28 | 2026-10-20 | 2028-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "24 (LTS) 2025-05-06 true 2025-10-28 true 2026-10-20 false 2028-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 24 image reaches end of life",
       "verification": {
         "by": "eol-generate",
         "last_verified": "2026-11-24",
@@ -1327,6 +3449,70 @@
       }
     },
     {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 25 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life since 2026-06-01 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-25"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2026-06-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to node:26 or a later LTS line, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-25-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "25.x | End-of-Life | 2025-10-15 | - | 2026-04-01 | 2026-06-01",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "25 2025-10-15 false true 2026-04-01 true 2026-06-01",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 25 image reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    {
       "applies_to": "Projects whose Node.js version (engines, .nvmrc, .node-version, setup-node or eas.json) is 26.x",
       "consequence": {
         "mode": "warning-only",
@@ -1385,6 +3571,504 @@
         "by": "eol-generate",
         "last_verified": "2026-11-24",
         "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on the node Docker official image whose tag names Node.js 26 (table docker-base-images)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End-of-life on 2029-04-30 in the Node.js release schedule."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.runtime",
+          "in": [
+            "node-26"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2029-04-30",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to a newer Node.js LTS line once one is released, and rebuild."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "runtime/nodejs-26-image-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "26.x | Active LTS | Lithium | 2026-05-05 | 2026-10-28 | 2027-10-20 | 2029-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/nodejs/Release/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "26 (LTS) 2026-05-05 true 2026-10-28 false 2027-10-27 false 2029-04-30",
+          "retrieved": "2026-11-24",
+          "url": "https://endoflife.date/api/v1/products/nodejs"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "nodejs"
+      ],
+      "timezone": "UTC",
+      "title": "Node.js 26 image reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-24"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.10",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life since 2026-10-01 on the Python versions page: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.10.x"
+        },
+        "requires": []
+      },
+      "effective": "2026-10-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to Python 3.15 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.10-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.10 | PEP 619 | end-of-life | 2021-10-04 | 2026-10-01",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.10 2021-10-04 false true 2023-04-05 true 2026-10-01",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.10 reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.11",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life scheduled for October 2027 on the Python versions page: no more security fixes after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.11.x"
+        },
+        "requires": []
+      },
+      "effective": "2027-10-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to Python 3.15 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.11-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.11 | PEP 664 | security | 2022-10-24 | 2027-10",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.11 2022-10-24 false true 2024-04-01 false 2027-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.11 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.12",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life scheduled for October 2028 on the Python versions page: no more security fixes after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.12.x"
+        },
+        "requires": []
+      },
+      "effective": "2028-10-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to Python 3.15 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.12-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.12 | PEP 693 | security | 2023-10-02 | 2028-10",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.12 2023-10-02 false true 2025-04-02 false 2028-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.12 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.13",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life scheduled for October 2029 on the Python versions page: no more security fixes after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.13.x"
+        },
+        "requires": []
+      },
+      "effective": "2029-10-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to Python 3.15 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.13-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.13 | PEP 719 | security | 2024-10-07 | 2029-10",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.13 2024-10-07 false true 2026-10-01 false 2029-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.13 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.14",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life scheduled for October 2030 on the Python versions page: no more security fixes after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.14.x"
+        },
+        "requires": []
+      },
+      "effective": "2030-10-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to Python 3.15 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.14-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.14 | PEP 745 | bugfix | 2025-10-07 | 2030-10",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.14 2025-10-07 false false 2027-10-01 false 2030-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.14 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.15",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life scheduled for October 2031 on the Python versions page: no more security fixes after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.15.x"
+        },
+        "requires": []
+      },
+      "effective": "2031-10-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to a newer Python release once one is out."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.15-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.15 | PEP 790 | bugfix | 2026-10-09 | 2031-10",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.15 2026-10-09 false false 2028-10-09 false 2031-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.15 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Projects whose Python version (.python-version, requires-python or Poetry python in pyproject.toml, actions/setup-python, or a python Docker image) is 3.9",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life since 2025-10-31 on the Python versions page: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "python.version",
+          "semverSatisfies": "3.9.x"
+        },
+        "requires": []
+      },
+      "effective": "2025-10-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "python",
+          "text": "Move to Python 3.15 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/python-3.9-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "3.9 | PEP 596 | end-of-life | 2020-10-05 | 2025-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://devguide.python.org/versions/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.9 2020-10-05 false true 2022-05-17 true 2025-10-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/python"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "python"
+      ],
+      "timezone": "UTC",
+      "title": "Python 3.9 reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
       }
     },
     {
@@ -1971,9 +4655,326 @@
         "last_verified": "2026-11-24",
         "next_check": "2026-12-01"
       }
+    },
+    {
+      "applies_to": "Projects whose Ruby version (.ruby-version, the Gemfile ruby line, ruby/setup-ruby, or a ruby Docker image) is 3.1",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life since 2025-03-26 on the Ruby branches page: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "ruby.version",
+          "semverSatisfies": "3.1.x"
+        },
+        "requires": []
+      },
+      "effective": "2025-03-26",
+      "extension": null,
+      "fix": [
+        {
+          "context": "ruby",
+          "text": "Move to Ruby 4.0 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/ruby-3.1-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ruby 3.1 | status: eol | release date: 2021-12-25 | normal maintenance until: 2024-04-01 | EOL: 2025-03-26",
+          "retrieved": "2026-11-28",
+          "url": "https://www.ruby-lang.org/en/downloads/branches/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.1 2021-12-25 false true 2025-03-26",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/ruby"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "ruby"
+      ],
+      "timezone": "UTC",
+      "title": "Ruby 3.1 reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Ruby version (.ruby-version, the Gemfile ruby line, ruby/setup-ruby, or a ruby Docker image) is 3.2",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life since 2026-04-01 on the Ruby branches page: no more security fixes."
+      },
+      "detect": {
+        "affected": {
+          "fact": "ruby.version",
+          "semverSatisfies": "3.2.x"
+        },
+        "requires": []
+      },
+      "effective": "2026-04-01",
+      "extension": null,
+      "fix": [
+        {
+          "context": "ruby",
+          "text": "Move to Ruby 4.0 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/ruby-3.2-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ruby 3.2 | status: eol | release date: 2022-12-25 | normal maintenance until: 2025-04-01 | EOL: 2026-04-01",
+          "retrieved": "2026-11-28",
+          "url": "https://www.ruby-lang.org/en/downloads/branches/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.2 2022-12-25 false true 2026-03-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/ruby"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "ruby"
+      ],
+      "timezone": "UTC",
+      "title": "Ruby 3.2 reached end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Projects whose Ruby version (.ruby-version, the Gemfile ruby line, ruby/setup-ruby, or a ruby Docker image) is 3.3",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "End of life on 2027-03-31 (expected) on the Ruby branches page: no more security fixes after it."
+      },
+      "detect": {
+        "affected": {
+          "fact": "ruby.version",
+          "semverSatisfies": "3.3.x"
+        },
+        "requires": []
+      },
+      "effective": "2027-03-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "ruby",
+          "text": "Move to Ruby 4.0 or a later release."
+        }
+      ],
+      "history": [
+        {
+          "change": "generated from endoflife.date",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/ruby-3.3-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "day",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ruby 3.3 | status: legacy maintenance | release date: 2023-12-25 | normal maintenance until: 2026-04-01 | EOL: 2027-03-31 (expected)",
+          "retrieved": "2026-11-28",
+          "url": "https://www.ruby-lang.org/en/downloads/branches/"
+        },
+        {
+          "archive": null,
+          "kind": "secondary",
+          "quote": "3.3 2023-12-25 false false 2027-03-31",
+          "retrieved": "2026-11-28",
+          "url": "https://endoflife.date/api/v1/products/ruby"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "runtime",
+        "ruby"
+      ],
+      "timezone": "UTC",
+      "title": "Ruby 3.3 reaches end of life",
+      "verification": {
+        "by": "eol-generate",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Ubuntu 20.04 (focal) or 18.04 (bionic) (ubuntu:20.04, eclipse-temurin:17-jdk-focal; tables docker-base-images and container-os-releases)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Standard security maintenance of Ubuntu 20.04 LTS ended in May 2025, and of 18.04 in May 2023: the image gets no more updates without Ubuntu Pro."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "ubuntu-20.04",
+            "ubuntu-18.04"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2025-05-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Move the image to a tag on Ubuntu 24.04 (noble), and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between releases",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/ubuntu-20.04-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Released: Apr 2020 May 2025",
+          "retrieved": "2026-11-28",
+          "url": "https://ubuntu.com/about/release-cycle"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Released: Apr 2018 May 2023",
+          "retrieved": "2026-11-28",
+          "url": "https://ubuntu.com/about/release-cycle"
+        }
+      ],
+      "status": "in-effect",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "ubuntu"
+      ],
+      "timezone": "UTC",
+      "title": "Ubuntu 20.04 LTS and older end standard support",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
+    {
+      "applies_to": "Dockerfile stages and GitLab CI jobs on a Docker official image whose tag names Ubuntu 22.04 (ubuntu:22.04, ubuntu:jammy, eclipse-temurin:21-jdk-jammy; tables docker-base-images and container-os-releases)",
+      "area": "ci-runtimes",
+      "consequence": {
+        "mode": "warning-only",
+        "text": "Standard security maintenance of Ubuntu 22.04 LTS ends in May 2027 (no day published): after it, the image gets no more updates without Ubuntu Pro."
+      },
+      "detect": {
+        "affected": {
+          "fact": "container.os",
+          "in": [
+            "ubuntu-22.04"
+          ]
+        },
+        "requires": []
+      },
+      "effective": "2027-05-31",
+      "extension": null,
+      "fix": [
+        {
+          "context": "docker",
+          "text": "Before May 2027, move the image to a tag on Ubuntu 24.04 (noble), and rebuild."
+        }
+      ],
+      "fix_effort": "a tag change per image, plus packages that changed between releases",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "runtime/ubuntu-22.04-eol",
+      "kind": "eol",
+      "platform": "runtime",
+      "precision": "month",
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Released: Apr 2022 May 2027",
+          "retrieved": "2026-11-28",
+          "url": "https://ubuntu.com/about/release-cycle"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ubuntu 22.04.5 LTS (Jammy Jellyfish)",
+          "retrieved": "2026-11-28",
+          "url": "https://releases.ubuntu.com/jammy/"
+        }
+      ],
+      "status": "announced",
+      "supersedes": null,
+      "tags": [
+        "docker",
+        "ubuntu"
+      ],
+      "timezone": "UTC",
+      "title": "Ubuntu 22.04 LTS ends standard support",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
     }
   ],
-  "generated": "2026-11-24",
+  "generated": "2026-11-28",
   "schemaVersion": 1,
   "tables": {
     "action-runtimes": {
@@ -4335,6 +7336,510 @@
         "next_check": "2026-12-08"
       }
     },
+    "container-os-releases": {
+      "area": "ci-runtimes",
+      "description": "Each Debian or Ubuntu release code name an image tag may carry, with the release it names.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "container-os-releases",
+      "key": "codename",
+      "rows": [
+        {
+          "codename": "stretch",
+          "confidence": "certain",
+          "os": "debian-9",
+          "source": "https://www.debian.org/releases/stretch/"
+        },
+        {
+          "codename": "buster",
+          "confidence": "certain",
+          "os": "debian-10",
+          "source": "https://www.debian.org/releases/buster/"
+        },
+        {
+          "codename": "bullseye",
+          "confidence": "certain",
+          "os": "debian-11",
+          "source": "https://www.debian.org/releases/bullseye/"
+        },
+        {
+          "codename": "bookworm",
+          "confidence": "certain",
+          "os": "debian-12",
+          "source": "https://www.debian.org/releases/bookworm/"
+        },
+        {
+          "codename": "trixie",
+          "confidence": "certain",
+          "os": "debian-13",
+          "source": "https://www.debian.org/releases/trixie/"
+        },
+        {
+          "codename": "bionic",
+          "confidence": "certain",
+          "os": "ubuntu-18.04",
+          "source": "https://releases.ubuntu.com/bionic/"
+        },
+        {
+          "codename": "focal",
+          "confidence": "certain",
+          "os": "ubuntu-20.04",
+          "source": "https://releases.ubuntu.com/focal/"
+        },
+        {
+          "codename": "jammy",
+          "confidence": "certain",
+          "os": "ubuntu-22.04",
+          "source": "https://releases.ubuntu.com/jammy/"
+        },
+        {
+          "codename": "noble",
+          "confidence": "certain",
+          "os": "ubuntu-24.04",
+          "source": "https://releases.ubuntu.com/noble/"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 9 has been superseded by Debian 10 (buster).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/stretch/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 10 has been superseded by Debian 11 (bullseye).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/buster/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 11 has been superseded by Debian 12 (bookworm).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/bullseye/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian 12 has been superseded by Debian 13 (trixie).",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/bookworm/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "The Debian 13 life cycle encompasses five years",
+          "retrieved": "2026-11-28",
+          "url": "https://www.debian.org/releases/trixie/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ubuntu 18.04.6 LTS (Bionic Beaver)",
+          "retrieved": "2026-11-28",
+          "url": "https://releases.ubuntu.com/bionic/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ubuntu 20.04.6 LTS (Focal Fossa)",
+          "retrieved": "2026-11-28",
+          "url": "https://releases.ubuntu.com/focal/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ubuntu 22.04.5 LTS (Jammy Jellyfish)",
+          "retrieved": "2026-11-28",
+          "url": "https://releases.ubuntu.com/jammy/"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ubuntu 24.04 (Noble Numbat)",
+          "retrieved": "2026-11-28",
+          "url": "https://releases.ubuntu.com/noble/"
+        }
+      ],
+      "title": "Debian and Ubuntu release code names in image tags",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    "docker-base-images": {
+      "area": "ci-runtimes",
+      "description": "Each Docker official image warnahead maps, with what the first part of its tag names (a runtime version or an OS release) and the image's status (maintained or deprecated).",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "docker-base-images",
+      "key": "image",
+      "rows": [
+        {
+          "confidence": "certain",
+          "image": "python",
+          "kind": "runtime",
+          "runtime": "python",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/python/README.md",
+          "status": "maintained",
+          "version": "minor"
+        },
+        {
+          "confidence": "certain",
+          "image": "node",
+          "kind": "runtime",
+          "runtime": "node",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/node/README.md",
+          "status": "maintained",
+          "version": "major"
+        },
+        {
+          "confidence": "certain",
+          "image": "ruby",
+          "kind": "runtime",
+          "runtime": "ruby",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/ruby/README.md",
+          "status": "maintained",
+          "version": "minor"
+        },
+        {
+          "confidence": "certain",
+          "image": "golang",
+          "kind": "runtime",
+          "runtime": "golang",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/golang/README.md",
+          "status": "maintained",
+          "version": "minor"
+        },
+        {
+          "confidence": "certain",
+          "image": "eclipse-temurin",
+          "kind": "runtime",
+          "runtime": "eclipse-temurin",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/eclipse-temurin/README.md",
+          "status": "maintained",
+          "version": "major"
+        },
+        {
+          "confidence": "certain",
+          "image": "openjdk",
+          "kind": "runtime",
+          "runtime": "openjdk",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/openjdk/README.md",
+          "status": "deprecated",
+          "version": "major"
+        },
+        {
+          "confidence": "certain",
+          "image": "debian",
+          "kind": "os",
+          "os": "debian",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/debian/README.md",
+          "status": "maintained",
+          "version": "major"
+        },
+        {
+          "confidence": "certain",
+          "image": "ubuntu",
+          "kind": "os",
+          "os": "ubuntu",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/ubuntu/README.md",
+          "status": "maintained",
+          "version": "minor"
+        },
+        {
+          "confidence": "certain",
+          "image": "alpine",
+          "kind": "os",
+          "os": "alpine",
+          "source": "https://raw.githubusercontent.com/docker-library/docs/master/alpine/README.md",
+          "status": "maintained",
+          "version": "minor"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "old versions can continue to be available for use, but are not maintained by upstream or the maintainer of the official image.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/official-images/master/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "These are the suite code names for releases of Debian and indicate which release the image is based on.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/python/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "These are the suite code names for releases of Debian and indicate which release the image is based on.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/node/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "These are the suite code names for releases of Debian and indicate which release the image is based on.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/ruby/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "These are the suite code names for releases of Debian and indicate which release the image is based on.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/golang/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "These are the suite code names for releases of Ubuntu and indicate which release the image is based on.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/eclipse-temurin/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "This image is officially deprecated and all users are recommended to find and use suitable replacements ASAP.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/openjdk/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Debian is an operating system which is composed primarily of free and open-source software",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/debian/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Ubuntu is a Debian-based Linux operating system",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/ubuntu/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "Alpine Linux is a Linux distribution built around musl libc and BusyBox.",
+          "retrieved": "2026-11-28",
+          "url": "https://raw.githubusercontent.com/docker-library/docs/master/alpine/README.md"
+        }
+      ],
+      "title": "Docker official images and the runtime or OS release their tags name",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-28"
+      }
+    },
+    "eas-android-images": {
+      "area": "deeper-mobile",
+      "description": "Every Android server image on the EAS Build infrastructure page, with the aliases the page lists (latest, sdk-<N>), its NDK and whether the page marks it as deprecated (without a date). An eas.json image that is not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "eas-android-images",
+      "key": "image",
+      "rows": [
+        {
+          "aliases": [
+            "sdk-58"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-58",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "latest",
+            "sdk-57"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-57",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-56"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-26.04-jdk-17-ndk-r27b",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-55"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-24.04-jdk-17-ndk-r27b-sdk-55",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-54"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-24.04-jdk-17-ndk-r27b",
+          "ndk": "27.1.12297006",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-53"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-17-ndk-r26b",
+          "ndk": "26.1.10909125",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-51",
+            "sdk-52"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "Legacy ubuntu-22.04-jdk-17-ndk-r26b-like",
+          "ndk": "26.1.10909125",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-50"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-17-ndk-r25b",
+          "ndk": "25.1.8937393",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [
+            "sdk-49"
+          ],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-11-ndk-r23b",
+          "ndk": "23.1.7779620",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-17-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": false,
+          "image": "ubuntu-22.04-jdk-11-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-22.04-jdk-8-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-11-ndk-r23b",
+          "ndk": "23.1.7779620",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-11-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-8-ndk-r21e",
+          "ndk": "21.4.7075529",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-11-ndk-r19c",
+          "ndk": "19.2.5345600",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "aliases": [],
+          "confidence": "inferred",
+          "deprecated": true,
+          "image": "ubuntu-20.04-jdk-8-ndk-r19c",
+          "ndk": "19.2.5345600",
+          "source": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-58",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "SDK aliases will be updated with every new SDK release.",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/expo/expo/blob/main/docs/pages/build-reference/infrastructure.mdx"
+        }
+      ],
+      "title": "EAS Build Android images and their NDK",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
     "eas-images": {
       "description": "Every iOS server image on the EAS Build infrastructure page, with the aliases the page lists (latest, sdk-<N>, former names), macOS and Xcode. An eas.json image that is not here, and the auto alias, resolve to unknown.",
       "history": [
@@ -4883,6 +8388,597 @@
         "next_check": "2026-12-08"
       }
     },
+    "flutter-sdk-defaults": {
+      "area": "deeper-mobile",
+      "description": "targetSdk, compileSdk and minSdk that flutter.targetSdkVersion and its siblings give in each Flutter stable minor, read at its last release (the first one has the same values). Rows marked inferred were read from the release tags only. A minor not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "flutter-sdk-defaults",
+      "key": "flutter",
+      "rows": [
+        {
+          "compileSdk": 33,
+          "confidence": "inferred",
+          "flutter": "3.16",
+          "last": "3.16.9",
+          "minSdk": 19,
+          "source": "https://github.com/flutter/flutter/blob/3.16.9/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 33
+        },
+        {
+          "compileSdk": 34,
+          "confidence": "inferred",
+          "flutter": "3.19",
+          "last": "3.19.6",
+          "minSdk": 19,
+          "source": "https://github.com/flutter/flutter/blob/3.19.6/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 33
+        },
+        {
+          "compileSdk": 34,
+          "confidence": "inferred",
+          "flutter": "3.22",
+          "last": "3.22.3",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.22.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 34
+        },
+        {
+          "compileSdk": 34,
+          "confidence": "inferred",
+          "flutter": "3.24",
+          "last": "3.24.5",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.24.5/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 34
+        },
+        {
+          "compileSdk": 35,
+          "confidence": "inferred",
+          "flutter": "3.27",
+          "last": "3.27.4",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.27.4/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 35
+        },
+        {
+          "compileSdk": 35,
+          "confidence": "inferred",
+          "flutter": "3.29",
+          "last": "3.29.3",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.29.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy",
+          "targetSdk": 35
+        },
+        {
+          "compileSdk": 35,
+          "confidence": "inferred",
+          "flutter": "3.32",
+          "last": "3.32.8",
+          "minSdk": 21,
+          "source": "https://github.com/flutter/flutter/blob/3.32.8/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 35
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "inferred",
+          "flutter": "3.35",
+          "last": "3.35.7",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.35.7/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.38",
+          "last": "3.38.10",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.38.10/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.41",
+          "last": "3.41.9",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.41.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.44",
+          "last": "3.44.9",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.44.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.47",
+          "last": "3.47.9",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.47.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        },
+        {
+          "compileSdk": 36,
+          "confidence": "certain",
+          "flutter": "3.50",
+          "last": "3.50.1",
+          "minSdk": 24,
+          "source": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt",
+          "targetSdk": 36
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "static int targetSdkVersion = 33",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.16.9/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "static int targetSdkVersion = 33",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.19.6/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 34",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.22.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 34",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.24.5/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 35",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.27.4/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "public final int targetSdkVersion = 35",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.29.3/packages/flutter_tools/gradle/src/main/groovy/flutter.groovy"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 35",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.32.8/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.35.7/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.38.10/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.41.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.44.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.47.9/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "val targetSdkVersion: Int = 36",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/flutter/flutter/blob/3.50.1/packages/flutter_tools/gradle/src/main/kotlin/FlutterExtension.kt"
+        }
+      ],
+      "title": "Default Android SDK levels of Flutter stable releases",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    "gha-runner-labels": {
+      "area": "ci-runtimes",
+      "description": "Each runner label in the runner-images README, with the image it runs on (the README name of its readme), the architecture and the badge (ga, preview or deprecated). A label not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-28"
+        }
+      ],
+      "id": "gha-runner-labels",
+      "key": "label",
+      "rows": [
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "macOS-15-arm64",
+          "label": "macos-15",
+          "name": "macOS 15 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "macOS-15",
+          "label": "macos-15-intel",
+          "name": "macOS 15",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "macOS-15",
+          "label": "macos-15-large",
+          "name": "macOS 15",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "macOS-15-arm64",
+          "label": "macos-15-xlarge",
+          "name": "macOS 15 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "macOS-26-arm64",
+          "label": "macos-26",
+          "name": "macOS 26 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "macOS-26",
+          "label": "macos-26-intel",
+          "name": "macOS 26",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "macOS-26",
+          "label": "macos-26-large",
+          "name": "macOS 26",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "macOS-26-arm64",
+          "label": "macos-26-xlarge",
+          "name": "macOS 26 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "macOS-26-arm64",
+          "label": "macos-latest",
+          "name": "macOS 26 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "macOS-26",
+          "label": "macos-latest-large",
+          "name": "macOS 26",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "ubuntu-22.04",
+          "label": "ubuntu-22.04",
+          "name": "Ubuntu 22.04",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "ubuntu-22.04-arm64",
+          "label": "ubuntu-22.04-arm",
+          "name": "Ubuntu 22.04 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "ubuntu-24.04",
+          "label": "ubuntu-24.04",
+          "name": "Ubuntu 24.04",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "ubuntu-24.04-arm64",
+          "label": "ubuntu-24.04-arm",
+          "name": "Ubuntu 24.04 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "ubuntu-26.04",
+          "label": "ubuntu-26.04",
+          "name": "Ubuntu 26.04",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "ubuntu-26.04-arm64",
+          "label": "ubuntu-26.04-arm",
+          "name": "Ubuntu 26.04 Arm64",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "ubuntu-26.04",
+          "label": "ubuntu-latest",
+          "name": "Ubuntu 26.04",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "ubuntu-slim",
+          "label": "ubuntu-slim",
+          "name": "Ubuntu Slim",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "windows-11-vs2026-arm64",
+          "label": "windows-11-arm",
+          "name": "Windows 11 Arm64 with Visual Studio 2026",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "windows-11-vs2026-arm64",
+          "label": "windows-11-vs2026-arm",
+          "name": "Windows 11 Arm64 with Visual Studio 2026",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "windows-2022",
+          "label": "windows-2022",
+          "name": "Windows Server 2022",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "windows-2025-vs2026",
+          "label": "windows-2025",
+          "name": "Windows Server 2025",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "windows-2025-vs2026",
+          "label": "windows-2025-vs2026",
+          "name": "Windows Server 2025",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "image": "windows-2025-vs2026",
+          "label": "windows-latest",
+          "name": "Windows Server 2025",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "xcode-27",
+          "label": "xcode-27",
+          "name": "Xcode 27",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "certain",
+          "image": "xcode-27",
+          "label": "xcode-27-xlarge",
+          "name": "Xcode 27",
+          "source": "https://github.com/actions/runner-images/blob/main/README.md",
+          "status": "ga"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-latest or ubuntu-26.04",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-26.04-arm",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-24.04",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-24.04-arm",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-22.04",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-22.04-arm",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-slim",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "xcode-27 or xcode-27-xlarge",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-latest-large, macos-26-intel, macos-26-large",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-latest, macos-26 or macos-26-xlarge",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-15-large, or macos-15-intel",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-15, or macos-15-xlarge",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-latest, windows-2025, or windows-2025-vs2026",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-2022",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-11-arm or windows-11-vs2026-arm",
+          "retrieved": "2026-11-28",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        }
+      ],
+      "title": "GitHub-hosted runner labels and their images",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-28",
+        "next_check": "2026-12-05"
+      }
+    },
     "gha-runner-xcode": {
       "description": "Each macOS runner label in the runner-images README, the image it selects, that image's default Xcode and every installed Xcode. Retired and deprecated images are left out; a label not here resolves to unknown.",
       "history": [
@@ -5200,6 +9296,448 @@
         }
       ],
       "title": "GitHub-hosted macOS runner labels and their Xcode",
+      "verification": {
+        "by": "guptaaman678",
+        "last_verified": "2026-11-24",
+        "next_check": "2026-12-01"
+      }
+    },
+    "ndk-on-runners": {
+      "area": "deeper-mobile",
+      "description": "Each runner label in the runner-images README whose image has Android tools, with the NDK versions in that image readme. Preview and deprecated images are left out; a label not here resolves to unknown.",
+      "history": [
+        {
+          "change": "created",
+          "date": "2026-11-24"
+        },
+        {
+          "change": "regenerated from the sources",
+          "date": "2026-11-24"
+        }
+      ],
+      "id": "ndk-on-runners",
+      "key": "label",
+      "rows": [
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15-intel",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15-large",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 15 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-15-xlarge",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26-intel",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26-large",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-26-xlarge",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26 Arm64",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-latest",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "macOS 26",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "macos-latest-large",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 22.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-22.04",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "certain",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 24.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-24.04",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 26.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-26.04",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2604-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Ubuntu 26.04",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "ubuntu-latest",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2604-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2022",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-2022",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2025",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-2025",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2025",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-2025-vs2026",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "arch": "x64",
+          "confidence": "inferred",
+          "image": "Windows Server 2025",
+          "installed": [
+            "27.3.13750724",
+            "29.0.14206865",
+            "30.0.16248370"
+          ],
+          "label": "windows-latest",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Xcode 27",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "xcode-27",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+        },
+        {
+          "arch": "arm64",
+          "confidence": "inferred",
+          "default": "27.3.13750724",
+          "image": "Xcode 27",
+          "installed": [
+            "27.3.13750724",
+            "28.2.13676358",
+            "29.0.14206865"
+          ],
+          "label": "xcode-27-xlarge",
+          "labelSource": "https://github.com/actions/runner-images/blob/main/README.md",
+          "source": "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+        }
+      ],
+      "sources": [
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-latest or ubuntu-26.04",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2604-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-24.04",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "ubuntu-22.04",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "xcode-27 or xcode-27-xlarge",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-latest-large, macos-26-intel, macos-26-large",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-latest, macos-26 or macos-26-xlarge",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-15-large, or macos-15-intel",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "macos-15, or macos-15-xlarge",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 (default) 28.2.13676358 29.0.14206865",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/macos/macos-15-arm64-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-latest, windows-2025, or windows-2025-vs2026",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2025-VS2026-Readme.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "windows-2022",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/README.md"
+        },
+        {
+          "archive": null,
+          "kind": "primary",
+          "quote": "27.3.13750724 29.0.14206865 30.0.16248370",
+          "retrieved": "2026-11-24",
+          "url": "https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md"
+        }
+      ],
+      "title": "GitHub-hosted runner labels and their Android NDKs",
       "verification": {
         "by": "guptaaman678",
         "last_verified": "2026-11-24",

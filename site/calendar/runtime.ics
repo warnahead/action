@@ -5,6 +5,80 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:warnahead: Runtimes
 BEGIN:VEVENT
+UID:runtime/go-1.22-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20250211
+DTEND;VALUE=DATE:20250212
+SUMMARY:Go 1.22 reached end of support
+DESCRIPTION:What happens: Unsupported since 2025-02-11\, when the second ne
+ wer Go major was released: no more security fixes.\nWho: Projects whose Go
+  version (go.mod go or toolchain line\, actions/setup-go\, or a golang Doc
+ ker image) is 1.22\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/go-1.22-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.22 reached end of support: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.22 reached end of support: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/ruby-3.1-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20250326
+DTEND;VALUE=DATE:20250327
+SUMMARY:Ruby 3.1 reached end of life
+DESCRIPTION:What happens: End of life since 2025-03-26 on the Ruby branches
+  page: no more security fixes.\nWho: Projects whose Ruby version (.ruby-ve
+ rsion\, the Gemfile ruby line\, ruby/setup-ruby\, or a ruby Docker image) 
+ is 3.1\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/ruby-3.1-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ruby 3.1 reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ruby 3.1 reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/eclipse-temurin-23-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20250331
+DTEND;VALUE=DATE:20250401
+SUMMARY:Eclipse Temurin 23 reached end of availability
+DESCRIPTION:What happens: End of availability since March 2025 on the Eclip
+ se Temurin support page: no more Temurin updates for Java 23.\nWho: Projec
+ ts whose Java is Eclipse Temurin 23 (actions/setup-java with distribution 
+ temurin\, a Gradle toolchain with vendor ADOPTIUM\, a temurin .java-versio
+ n\, or an eclipse-temurin Docker image)\nDate precision: Mar 2025\nLast ve
+ rified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-23-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 23 reached end of availability: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 23 reached end of availability: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/nodejs-18-eol
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20250430
@@ -28,6 +102,57 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/nodejs-18-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20250430
+DTEND;VALUE=DATE:20250501
+SUMMARY:Node.js 18 image reached end of life
+DESCRIPTION:What happens: End-of-life since 2025-04-30 in the Node.js relea
+ se schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker
+  official image whose tag names Node.js 18 (table docker-base-images)\nLas
+ t verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-18-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 18 image reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 18 image reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/ubuntu-20.04-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20250531
+DTEND;VALUE=DATE:20250601
+SUMMARY:Ubuntu 20.04 LTS and older end standard support
+DESCRIPTION:What happens: Standard security maintenance of Ubuntu 20.04 LTS
+  ended in May 2025\, and of 18.04 in May 2023: the image gets no more upda
+ tes without Ubuntu Pro.\nWho: Dockerfile stages and GitLab CI jobs on a Do
+ cker official image whose tag names Ubuntu 20.04 (focal) or 18.04 (bionic)
+  (ubuntu:20.04\, eclipse-temurin:17-jdk-focal\; tables docker-base-images 
+ and container-os-releases)\nDate precision: May 2025\nLast verified 2026-1
+ 1-28
+URL:https://warnahead.pages.dev/deadlines/runtime/ubuntu-20.04-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ubuntu 20.04 LTS and older end standard support: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ubuntu 20.04 LTS and older end standard support: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/nodejs-23-eol
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20250601
@@ -47,6 +172,30 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Node.js 23 reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/nodejs-23-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20250601
+DTEND;VALUE=DATE:20250602
+SUMMARY:Node.js 23 image reached end of life
+DESCRIPTION:What happens: End-of-life since 2025-06-01 in the Node.js relea
+ se schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker
+  official image whose tag names Node.js 23 (table docker-base-images)\nLas
+ t verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-23-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 23 image reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 23 image reached end of life: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -75,6 +224,30 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/go-1.23-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20250812
+DTEND;VALUE=DATE:20250813
+SUMMARY:Go 1.23 reached end of support
+DESCRIPTION:What happens: Unsupported since 2025-08-12\, when the second ne
+ wer Go major was released: no more security fixes.\nWho: Projects whose Go
+  version (go.mod go or toolchain line\, actions/setup-go\, or a golang Doc
+ ker image) is 1.23\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/go-1.23-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.23 reached end of support: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.23 reached end of support: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/react-native-0.78-support
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20250812
@@ -95,6 +268,32 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:React Native 0.78 is unsupported: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/eclipse-temurin-24-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20250930
+DTEND;VALUE=DATE:20251001
+SUMMARY:Eclipse Temurin 24 reached end of availability
+DESCRIPTION:What happens: End of availability since September 2025 on the E
+ clipse Temurin support page: no more Temurin updates for Java 24.\nWho: Pr
+ ojects whose Java is Eclipse Temurin 24 (actions/setup-java with distribut
+ ion temurin\, a Gradle toolchain with vendor ADOPTIUM\, a temurin .java-ve
+ rsion\, or an eclipse-temurin Docker image)\nDate precision: Sep 2025\nLas
+ t verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-24-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 24 reached end of availability: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 24 reached end of availability: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -123,6 +322,30 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/python-3.9-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20251031
+DTEND;VALUE=DATE:20251101
+SUMMARY:Python 3.9 reached end of life
+DESCRIPTION:What happens: End of life since 2025-10-31 on the Python versio
+ ns page: no more security fixes.\nWho: Projects whose Python version (.pyt
+ hon-version\, requires-python or Poetry python in pyproject.toml\, actions
+ /setup-python\, or a python Docker image) is 3.9\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.9-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.9 reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.9 reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/react-native-0.80-support
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20251210
@@ -147,6 +370,30 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/go-1.24-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20260210
+DTEND;VALUE=DATE:20260211
+SUMMARY:Go 1.24 reached end of support
+DESCRIPTION:What happens: Unsupported since 2026-02-10\, when the second ne
+ wer Go major was released: no more security fixes.\nWho: Projects whose Go
+  version (go.mod go or toolchain line\, actions/setup-go\, or a golang Doc
+ ker image) is 1.24\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/go-1.24-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.24 reached end of support: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.24 reached end of support: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/react-native-0.81-support
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20260211
@@ -167,6 +414,30 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:React Native 0.81 is unsupported: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/ruby-3.2-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20260401
+DTEND;VALUE=DATE:20260402
+SUMMARY:Ruby 3.2 reached end of life
+DESCRIPTION:What happens: End of life since 2026-04-01 on the Ruby branches
+  page: no more security fixes.\nWho: Projects whose Ruby version (.ruby-ve
+ rsion\, the Gemfile ruby line\, ruby/setup-ruby\, or a ruby Docker image) 
+ is 3.2\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/ruby-3.2-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ruby 3.2 reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ruby 3.2 reached end of life: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -218,6 +489,30 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/nodejs-20-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260430
+DTEND;VALUE=DATE:20260501
+SUMMARY:Node.js 20 image reached end of life
+DESCRIPTION:What happens: End-of-life since 2026-04-30 in the Node.js relea
+ se schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker
+  official image whose tag names Node.js 20 (table docker-base-images)\nLas
+ t verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-20-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 20 image reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 20 image reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/nodejs-25-eol
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20260601
@@ -237,6 +532,30 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Node.js 25 reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/nodejs-25-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260601
+DTEND;VALUE=DATE:20260602
+SUMMARY:Node.js 25 image reached end of life
+DESCRIPTION:What happens: End-of-life since 2026-06-01 in the Node.js relea
+ se schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker
+  official image whose tag names Node.js 25 (table docker-base-images)\nLas
+ t verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-25-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 25 image reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 25 image reached end of life: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -289,6 +608,107 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/go-1.25-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20260819
+DTEND;VALUE=DATE:20260820
+SUMMARY:Go 1.25 reached end of support
+DESCRIPTION:What happens: Unsupported since 2026-08-19\, when the second ne
+ wer Go major was released: no more security fixes.\nWho: Projects whose Go
+  version (go.mod go or toolchain line\, actions/setup-go\, or a golang Doc
+ ker image) is 1.25\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/go-1.25-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.25 reached end of support: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Go 1.25 reached end of support: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/debian-11-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:Debian 11 (bullseye) and older reach end of life
+DESCRIPTION:What happens: Debian 11 bullseye Long Term Support ended on 202
+ 6-08-31\, and the older releases ended before it: the image gets no more s
+ ecurity updates.\nWho: Dockerfile stages and GitLab CI jobs on a Docker of
+ ficial image whose tag names Debian 11 (bullseye) or older (debian:11\, py
+ thon:3.11-slim-bullseye\; tables docker-base-images and container-os-relea
+ ses)\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/debian-11-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Debian 11 (bullseye) and older reach end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Debian 11 (bullseye) and older reach end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/eclipse-temurin-26-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:Eclipse Temurin 26 reached end of availability
+DESCRIPTION:What happens: End of availability since September 2026 on the E
+ clipse Temurin support page: no more Temurin updates for Java 26.\nWho: Pr
+ ojects whose Java is Eclipse Temurin 26 (actions/setup-java with distribut
+ ion temurin\, a Gradle toolchain with vendor ADOPTIUM\, a temurin .java-ve
+ rsion\, or an eclipse-temurin Docker image)\nDate precision: Sep 2026\nLas
+ t verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-26-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 26 reached end of availability: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 26 reached end of availability: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/python-3.10-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:Python 3.10 reached end of life
+DESCRIPTION:What happens: End of life since 2026-10-01 on the Python versio
+ ns page: no more security fixes.\nWho: Projects whose Python version (.pyt
+ hon-version\, requires-python or Poetry python in pyproject.toml\, actions
+ /setup-python\, or a python Docker image) is 3.10\nLast verified 2026-11-2
+ 8
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.10-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.10 reached end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.10 reached end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/react-native-0.85-support
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20261012
@@ -309,6 +729,81 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:React Native 0.85 is unsupported: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/alpine-3.21-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:Alpine Linux 3.21 and older reach end of life
+DESCRIPTION:What happens: Alpine Linux 3.21 support ended on 2026-11-01\, a
+ nd the older branches ended before it: the image gets no more security upd
+ ates.\nWho: Dockerfile stages and GitLab CI jobs on a Docker official imag
+ e whose tag names Alpine 3.21 or older (alpine:3.21\, node:20-alpine3.19\;
+  table docker-base-images)\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/alpine-3.21-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Alpine Linux 3.21 and older reach end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Alpine Linux 3.21 and older reach end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/eclipse-temurin-27-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:Eclipse Temurin 27 reaches end of availability
+DESCRIPTION:What happens: End of availability in March 2027 on the Eclipse 
+ Temurin support page: no more Temurin updates for Java 27 after it.\nWho: 
+ Projects whose Java is Eclipse Temurin 27 (actions/setup-java with distrib
+ ution temurin\, a Gradle toolchain with vendor ADOPTIUM\, a temurin .java-
+ version\, or an eclipse-temurin Docker image)\nDate precision: Mar 2027\nL
+ ast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/eclipse-temurin-27-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 27 reaches end of availability: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Eclipse Temurin 27 reaches end of availability: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/ruby-3.3-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:Ruby 3.3 reaches end of life
+DESCRIPTION:What happens: End of life on 2027-03-31 (expected) on the Ruby 
+ branches page: no more security fixes after it.\nWho: Projects whose Ruby 
+ version (.ruby-version\, the Gemfile ruby line\, ruby/setup-ruby\, or a ru
+ by Docker image) is 3.3\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/ruby-3.3-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ruby 3.3 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ruby 3.3 reaches end of life: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -336,6 +831,131 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/nodejs-22-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Node.js 22 image reaches end of life
+DESCRIPTION:What happens: End-of-life on 2027-04-30 in the Node.js release 
+ schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker of
+ ficial image whose tag names Node.js 22 (table docker-base-images)\nLast v
+ erified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-22-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 22 image reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 22 image reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/alpine-3.22-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270501
+DTEND;VALUE=DATE:20270502
+SUMMARY:Alpine Linux 3.22 reaches end of life
+DESCRIPTION:What happens: Alpine Linux 3.22 support ends on 2027-05-01: aft
+ er it\, the image gets no more security updates.\nWho: Dockerfile stages a
+ nd GitLab CI jobs on a Docker official image whose tag names Alpine 3.22 (
+ alpine:3.22\, python:3.12-alpine3.22\; table docker-base-images)\nLast ver
+ ified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/alpine-3.22-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Alpine Linux 3.22 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Alpine Linux 3.22 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/ubuntu-22.04-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270531
+DTEND;VALUE=DATE:20270601
+SUMMARY:Ubuntu 22.04 LTS ends standard support
+DESCRIPTION:What happens: Standard security maintenance of Ubuntu 22.04 LTS
+  ends in May 2027 (no day published): after it\, the image gets no more up
+ dates without Ubuntu Pro.\nWho: Dockerfile stages and GitLab CI jobs on a 
+ Docker official image whose tag names Ubuntu 22.04 (ubuntu:22.04\, ubuntu:
+ jammy\, eclipse-temurin:21-jdk-jammy\; tables docker-base-images and conta
+ iner-os-releases)\nDate precision: May 2027\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/ubuntu-22.04-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ubuntu 22.04 LTS ends standard support: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Ubuntu 22.04 LTS ends standard support: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/python-3.11-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20271031
+DTEND;VALUE=DATE:20271101
+SUMMARY:Python 3.11 reaches end of life
+DESCRIPTION:What happens: End of life scheduled for October 2027 on the Pyt
+ hon versions page: no more security fixes after it.\nWho: Projects whose P
+ ython version (.python-version\, requires-python or Poetry python in pypro
+ ject.toml\, actions/setup-python\, or a python Docker image) is 3.11\nDate
+  precision: Oct 2027\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.11-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.11 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.11 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/alpine-3.23-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20271101
+DTEND;VALUE=DATE:20271102
+SUMMARY:Alpine Linux 3.23 reaches end of life
+DESCRIPTION:What happens: Alpine Linux 3.23 support ends on 2027-11-01: aft
+ er it\, the image gets no more security updates.\nWho: Dockerfile stages a
+ nd GitLab CI jobs on a Docker official image whose tag names Alpine 3.23 (
+ alpine:3.23\, golang:1.26-alpine3.23\; table docker-base-images)\nLast ver
+ ified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/alpine-3.23-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Alpine Linux 3.23 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Alpine Linux 3.23 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/nodejs-24-eol
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20280430
@@ -359,6 +979,80 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:runtime/nodejs-24-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20280430
+DTEND;VALUE=DATE:20280501
+SUMMARY:Node.js 24 image reaches end of life
+DESCRIPTION:What happens: End-of-life on 2028-04-30 in the Node.js release 
+ schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker of
+ ficial image whose tag names Node.js 24 (table docker-base-images)\nLast v
+ erified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-24-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 24 image reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 24 image reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/debian-12-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20280630
+DTEND;VALUE=DATE:20280701
+SUMMARY:Debian 12 (bookworm) reaches end of life
+DESCRIPTION:What happens: Debian 12 bookworm Long Term Support ends on 2028
+ -06-30: after it\, the image gets no more security updates.\nWho: Dockerfi
+ le stages and GitLab CI jobs on a Docker official image whose tag names De
+ bian 12 (debian:12\, debian:bookworm\, node:20-bookworm-slim\; tables dock
+ er-base-images and container-os-releases)\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/debian-12-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Debian 12 (bookworm) reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Debian 12 (bookworm) reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/python-3.12-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20281031
+DTEND;VALUE=DATE:20281101
+SUMMARY:Python 3.12 reaches end of life
+DESCRIPTION:What happens: End of life scheduled for October 2028 on the Pyt
+ hon versions page: no more security fixes after it.\nWho: Projects whose P
+ ython version (.python-version\, requires-python or Poetry python in pypro
+ ject.toml\, actions/setup-python\, or a python Docker image) is 3.12\nDate
+  precision: Oct 2028\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.12-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.12 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.12 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:runtime/nodejs-26-eol
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20290430
@@ -378,6 +1072,105 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Node.js 26 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/nodejs-26-image-eol
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20290430
+DTEND;VALUE=DATE:20290501
+SUMMARY:Node.js 26 image reaches end of life
+DESCRIPTION:What happens: End-of-life on 2029-04-30 in the Node.js release 
+ schedule.\nWho: Dockerfile stages and GitLab CI jobs on the node Docker of
+ ficial image whose tag names Node.js 26 (table docker-base-images)\nLast v
+ erified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/runtime/nodejs-26-image-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 26 image reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Node.js 26 image reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/python-3.13-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20291031
+DTEND;VALUE=DATE:20291101
+SUMMARY:Python 3.13 reaches end of life
+DESCRIPTION:What happens: End of life scheduled for October 2029 on the Pyt
+ hon versions page: no more security fixes after it.\nWho: Projects whose P
+ ython version (.python-version\, requires-python or Poetry python in pypro
+ ject.toml\, actions/setup-python\, or a python Docker image) is 3.13\nDate
+  precision: Oct 2029\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.13-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.13 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.13 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/python-3.14-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20301031
+DTEND;VALUE=DATE:20301101
+SUMMARY:Python 3.14 reaches end of life
+DESCRIPTION:What happens: End of life scheduled for October 2030 on the Pyt
+ hon versions page: no more security fixes after it.\nWho: Projects whose P
+ ython version (.python-version\, requires-python or Poetry python in pypro
+ ject.toml\, actions/setup-python\, or a python Docker image) is 3.14\nDate
+  precision: Oct 2030\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.14-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.14 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.14 reaches end of life: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:runtime/python-3.15-eol
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20311031
+DTEND;VALUE=DATE:20311101
+SUMMARY:Python 3.15 reaches end of life
+DESCRIPTION:What happens: End of life scheduled for October 2031 on the Pyt
+ hon versions page: no more security fixes after it.\nWho: Projects whose P
+ ython version (.python-version\, requires-python or Poetry python in pypro
+ ject.toml\, actions/setup-python\, or a python Docker image) is 3.15\nDate
+  precision: Oct 2031\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/runtime/python-3.15-eol/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.15 reaches end of life: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Python 3.15 reaches end of life: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT

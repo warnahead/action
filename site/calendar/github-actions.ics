@@ -5,6 +5,35 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:warnahead: GitHub Actions
 BEGIN:VEVENT
+UID:github-actions/ndk-26-removal-2026
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260112
+DTEND;VALUE=DATE:20260113
+SUMMARY:GitHub Actions: Android NDK 26 is removed from the GitHub runner im
+ ages
+DESCRIPTION:What happens: Android NDK 26 will be removed from all supported
+  images.\nWho: Android apps that pin NDK 26.3.11579264 and are built on a 
+ GitHub-hosted image without it (the removal started on 2026-01-12 and took
+  about 3 days). Gradle can install it during the build when its license is
+  accepted\; otherwise the build can fail.\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/github-actions/ndk-26-removal-202
+ 6/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GitHub Actions: Android NDK 26 is removed from the GitHub runne
+ r images: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GitHub Actions: Android NDK 26 is removed from the GitHub runne
+ r images: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:github-actions/node20-actions
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20260923
@@ -27,6 +56,36 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:GitHub Actions: Actions declaring node20 now run on Node 24: in
   7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:github-actions/ndk-28-removal-2026
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20261001
+DTEND;VALUE=DATE:20261002
+SUMMARY:GitHub Actions: Android NDK 28 is removed from the GitHub runner im
+ ages
+DESCRIPTION:What happens: Only workflows that explicitly use NDK 28 (via nd
+ kVersion or an NDK 28 path) are affected once it's removed.\nWho: Android 
+ apps that pin NDK 28.2.13676358 and are built on a GitHub-hosted image wit
+ hout it (Ubuntu and Windows since October 2026\; the macOS images still ha
+ d it on 2026-11-24). Gradle can install it during the build when its licen
+ se is accepted\; otherwise the build can fail.\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/github-actions/ndk-28-removal-202
+ 6/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GitHub Actions: Android NDK 28 is removed from the GitHub runne
+ r images: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GitHub Actions: Android NDK 28 is removed from the GitHub runne
+ r images: in 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -105,6 +164,35 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:GitHub Actions: Ubuntu 22.04 runner images are retired on April
   17\, 2027: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:github-actions/macos-intel-retirement-2027
+DTSTAMP:20261128T000000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:GitHub Actions: macOS Intel (x86_64) runner images end
+DESCRIPTION:What happens: The x86_64 macOS label macos-15-intel is availabl
+ e until August 2027\, and after that date the x86_64 architecture will not
+  be supported on GitHub Actions: no day published yet.\nWho: GitHub-hosted
+  jobs on a macOS Intel (x64) image\, in any repository (macos-15-intel\, m
+ acos-15-large\, macos-26-intel\, macos-26-large\, macos-latest-large\; tab
+ le gha-runner-labels)\nDate precision: Aug 2027\nLast verified 2026-11-28
+URL:https://warnahead.pages.dev/deadlines/github-actions/macos-intel-retire
+ ment-2027/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GitHub Actions: macOS Intel (x86_64) runner images end: in 30 d
+ ays
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:GitHub Actions: macOS Intel (x86_64) runner images end: in 7 da
+ ys
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
