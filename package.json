@@ -1,6 +1,6 @@
 {
   "name": "warnahead",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Warns you before store and CI deadlines block your mobile app release",
   "author": "Aman Gupta (https://github.com/guptaaman678)",
   "license": "SEE LICENSE IN LICENSE.md",

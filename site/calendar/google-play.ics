@@ -5,6 +5,61 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:warnahead: Google Play
 BEGIN:VEVENT
+UID:google-play/tv-target-api-2026
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20250831
+DTEND;VALUE=DATE:20250901
+SUMMARY:Google Play: New Android TV apps and updates must target API 34
+DESCRIPTION:What happens: New Android TV apps and app updates must target A
+ ndroid 14 (API level 34) or higher to be submitted to Google Play.\nWho: A
+ ndroid TV apps submitted to Google Play whose manifest requires the Androi
+ d TV feature\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/tv-target-api-2026/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Android TV apps and updates must target API 34
+ : in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Android TV apps and updates must target API 34
+ : in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:google-play/automotive-target-api-2026
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:Google Play: New Android Automotive OS apps and updates must target
+  API 35
+DESCRIPTION:What happens: New Android Automotive OS apps and app updates mu
+ st target Android 15 (API level 35) or higher to be submitted to Google Pl
+ ay.\nWho: Android Automotive OS apps submitted to Google Play whose manife
+ st requires the Android Automotive OS feature\nExtension until 2026-11-01:
+  On request in Play Console\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/automotive-target-api
+ -2026/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Android Automotive OS apps and updates must ta
+ rget API 35: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Android Automotive OS apps and updates must ta
+ rget API 35: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:google-play/billing-8-2026
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20260831
@@ -29,6 +84,64 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Google Play: New apps and updates must use Play Billing Library
   8 or later: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:google-play/flutter-target-api-2026-existing
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:Google Play: Existing Flutter apps must target API 35 to stay avail
+ able to new users
+DESCRIPTION:What happens: Existing apps must target Android 15 (API level 3
+ 5) or higher to remain available to new users on devices running Android O
+ S higher than your app's target API level.\nWho: Flutter phone and tablet 
+ apps already published on Google Play whose Gradle script takes targetSdk 
+ from flutter.targetSdkVersion\nExtension until 2026-11-01: On request in P
+ lay Console\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-20
+ 26-existing/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: Existing Flutter apps must target API 35 to stay a
+ vailable to new users: in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: Existing Flutter apps must target API 35 to stay a
+ vailable to new users: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:google-play/flutter-target-api-2026-updates
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:Google Play: New Flutter apps and updates must target API 36
+DESCRIPTION:What happens: New apps and app updates must target Android 16 (
+ API level 36) or higher to be submitted to Google Play.\nWho: Flutter phon
+ e and tablet apps submitted to Google Play whose Gradle script takes targe
+ tSdk from flutter.targetSdkVersion\nExtension until 2026-11-01: On request
+  in Play Console\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-20
+ 26-updates/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Flutter apps and updates must target API 36: i
+ n 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Flutter apps and updates must target API 36: i
+ n 7 days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -70,7 +183,7 @@ DTEND;VALUE=DATE:20260901
 SUMMARY:Google Play: New apps and updates must target API 36
 DESCRIPTION:What happens: New apps and app updates must target Android 16 (
  API level 36) or higher to be submitted to Google Play.\nWho: Android phon
- e and tablet apps published on Google Play (Wear OS and Android Automotive
+ e and tablet apps submitted to Google Play (Wear OS and Android Automotive
   OS need API 35\, Android TV and Android XR need API 34)\nExtension until 
  2026-11-01: On request in Play Console\nLast verified 2026-11-24
 URL:https://warnahead.pages.dev/deadlines/google-play/target-api-2026-updat
@@ -86,6 +199,87 @@ END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Google Play: New apps and updates must target API 36: in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:google-play/wear-target-api-2026
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:Google Play: New Wear OS apps and updates must target API 35
+DESCRIPTION:What happens: New Wear OS apps and app updates must target Andr
+ oid 15 (API level 35) or higher to be submitted to Google Play.\nWho: Wear
+  OS apps submitted to Google Play whose manifest requires the Wear OS feat
+ ure\nExtension until 2026-11-01: On request in Play Console\nLast verified
+  2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/wear-target-api-2026/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Wear OS apps and updates must target API 35: i
+ n 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Wear OS apps and updates must target API 35: i
+ n 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:google-play/xr-target-api-2026
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20260831
+DTEND;VALUE=DATE:20260901
+SUMMARY:Google Play: New Android XR apps and updates must target API 34
+DESCRIPTION:What happens: New Android XR apps and app updates must target A
+ ndroid 14 (API level 34) or higher to be submitted to Google Play.\nWho: A
+ ndroid XR apps submitted to Google Play whose manifest requires the Androi
+ d XR feature\nExtension until 2026-11-01: On request in Play Console\nLast
+  verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/xr-target-api-2026/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Android XR apps and updates must target API 34
+ : in 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Android XR apps and updates must target API 34
+ : in 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:google-play/page-size-16kb-updates
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270202
+SUMMARY:Google Play: App updates must support 16 KB memory pages
+DESCRIPTION:What happens: App updates that target Android 15 (API level 35)
+  or higher and do not support 16 KB memory page sizes on 64-bit devices ca
+ n't be released on Google Play.\nWho: Android phone and tablet apps submit
+ ted to Google Play that target API 35 or higher\nLast verified 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/page-size-16kb-update
+ s/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: App updates must support 16 KB memory pages: in 30
+  days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: App updates must support 16 KB memory pages: in 7 
+ days
 TRIGGER:-P7D
 END:VALARM
 END:VEVENT
@@ -118,6 +312,34 @@ TRIGGER:-P7D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:google-play/flutter-target-api-2027-updates
+DTSTAMP:20261124T000000Z
+DTSTART;VALUE=DATE:20270831
+DTEND;VALUE=DATE:20270901
+SUMMARY:Google Play: New Flutter apps and updates must target API 37
+DESCRIPTION:What happens: New and updated apps are required to target API l
+ evel 37 (Android 17): August 2027\, no day published yet.\nWho: Flutter ph
+ one and tablet apps submitted to Google Play whose Gradle script takes tar
+ getSdk from flutter.targetSdkVersion\nDate precision: Aug 2027\nLast verif
+ ied 2026-11-24
+URL:https://warnahead.pages.dev/deadlines/google-play/flutter-target-api-20
+ 27-updates/
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Flutter apps and updates must target API 37: i
+ n 30 days
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Google Play: New Flutter apps and updates must target API 37: i
+ n 7 days
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:google-play/target-api-2027-updates
 DTSTAMP:20261124T000000Z
 DTSTART;VALUE=DATE:20270831
@@ -125,7 +347,7 @@ DTEND;VALUE=DATE:20270901
 SUMMARY:Google Play: New apps and updates must target API 37
 DESCRIPTION:What happens: New and updated apps are required to target API l
  evel 37 (Android 17): August 2027\, no day published yet.\nWho: Android ph
- one and tablet apps published on Google Play\nDate precision: Aug 2027\nLa
+ one and tablet apps submitted to Google Play\nDate precision: Aug 2027\nLa
  st verified 2026-11-24
 URL:https://warnahead.pages.dev/deadlines/google-play/target-api-2027-updat
  es/
